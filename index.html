@@ -197,6 +197,13 @@
   .fiche .lab { font-size: 13px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 14px; }
   .fiche .f-section p, .fiche .f-resume p { font-size: clamp(1.1rem, 1.7vw, 1.45rem); font-weight: 300; line-height: 1.6; color: #d9e0fb; }
   .fiche .a-completer { color: #8fa0d8; font-style: italic; }
+  /* Section "Bien démarrer avec Claude" : liste d'astuces */
+  .fiche .f-astuces { list-style: none; display: grid; gap: 16px; margin: 4px 0 20px; }
+  .fiche .f-astuces li { display: flex; gap: 14px; align-items: flex-start; font-size: clamp(1.1rem, 1.7vw, 1.45rem); font-weight: 300; line-height: 1.55; color: #d9e0fb; }
+  .fiche .f-astuces .ast-emoji { flex: none; font-size: 1.05em; line-height: 1.35; }
+  .fiche .f-astuces strong { font-weight: 600; color: #fff; }
+  .fiche .f-astuces-outro { font-style: italic; color: #b7c2ea; }
+  .fiche code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.82em; background: rgba(249,143,3,0.16); color: var(--orange); padding: 2px 8px; border-radius: 6px; }
 
   /* ===== MODALE ÉQUIPE ===== */
   .f-membres { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 28px; }
@@ -206,9 +213,13 @@
   .cred { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 16px 20px; }
   .cred .cle { font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--orange); min-width: 120px; }
   .cred .val { font-size: clamp(1rem, 1.5vw, 1.2rem); color: #eef1ff; font-weight: 400; word-break: break-all; }
-  .cred-copy { margin-left: auto; flex-shrink: 0; display: inline-flex; align-items: center; gap: 7px; cursor: pointer; background: rgba(249,143,3,0.12); border: 1px solid rgba(249,143,3,0.5); color: var(--orange); border-radius: 999px; padding: 7px 15px; font-family: 'Geomanist', sans-serif; font-size: 12.5px; font-weight: 500; transition: background .2s, color .2s, border-color .2s; }
-  .cred-copy:hover { background: var(--orange); color: #041543; }
-  .cred-copy.ok { background: #1f9d55; border-color: #1f9d55; color: #fff; }
+  .cred-copy, .prompt-copy { margin-left: auto; flex-shrink: 0; display: inline-flex; align-items: center; gap: 7px; cursor: pointer; background: rgba(249,143,3,0.12); border: 1px solid rgba(249,143,3,0.5); color: var(--orange); border-radius: 999px; padding: 7px 15px; font-family: 'Geomanist', sans-serif; font-size: 12.5px; font-weight: 500; transition: background .2s, color .2s, border-color .2s; }
+  .cred-copy:hover, .prompt-copy:hover { background: var(--orange); color: #041543; }
+  .cred-copy.ok, .prompt-copy.ok { background: #1f9d55; border-color: #1f9d55; color: #fff; }
+  /* Bloc "Prompt de démarrage" : texte copiable */
+  .fiche .prompt-box { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 18px 20px; }
+  .fiche .prompt-box .prompt-txt { margin: 0; font-size: clamp(1rem, 1.5vw, 1.18rem); line-height: 1.6; font-weight: 300; color: #eef1ff; white-space: pre-wrap; }
+  .fiche .prompt-box .prompt-actions { display: flex; justify-content: flex-end; margin-top: 16px; }
   @media (max-width: 620px) { .f-membres { grid-template-columns: 1fr; } }
 
   /* Commandes du carrousel : flèches posées SUR le slideshow, à gauche et à droite */
@@ -445,10 +456,30 @@
   const ficheContenu = document.getElementById("fiche-contenu");
   let ficheOuverte = false;
 
+  // Contenu identique sur tous les défis : les réflexes Claude à connaître
+  const BIEN_DEMARRER_HTML =
+    '<p>Trois réflexes pour tirer le meilleur de Claude&nbsp;:</p>' +
+    '<ul class="f-astuces">' +
+      '<li><span class="ast-emoji">🎯</span><span><strong>Soignez votre prompt</strong> — contexte, objectif et contraintes. Plus c\'est précis, meilleur est le résultat.</span></li>' +
+      '<li><span class="ast-emoji">🧭</span><span><strong>Lancez <code>/plan</code></strong> avant de coder — Claude propose une stratégie que vous validez, pour ne pas partir dans le mur.</span></li>' +
+      '<li><span class="ast-emoji">♻️</span><span><strong>Pensez à <code>/compact</code></strong> quand ça s\'allonge — ça résume l\'historique et garde Claude concentré.</span></li>' +
+    '</ul>' +
+    '<p class="f-astuces-outro">Et surtout&nbsp;: itérez sans crainte. Reformulez, corrigez — c\'est en dialoguant qu\'on avance.</p>';
+
   // Un placeholder est affiché en italique bleuté tant que la fiche n'est pas rédigée
   function paragrapheFiche(texte) {
+    if (typeof texte !== "string") { texte = "[à compléter]"; }
     const estPlaceholder = texte.indexOf("[à compléter") === 0;
     return '<p class="' + (estPlaceholder ? "a-completer" : "") + '">' + texte + '</p>';
+  }
+
+  // Le prompt de démarrage : bloc copiable si rédigé, sinon simple placeholder
+  function blocPrompt(texte) {
+    if (typeof texte !== "string" || texte.indexOf("[à compléter") === 0) {
+      return paragrapheFiche(texte);
+    }
+    return '<div class="prompt-box"><p class="prompt-txt">' + texte + '</p>' +
+      '<div class="prompt-actions"><button class="prompt-copy" type="button" aria-label="Copier le prompt"><span aria-hidden="true">📋</span> Copier</button></div></div>';
   }
 
   function ouvrirFiche(i) {
@@ -462,11 +493,11 @@
         '<div><div class="lab pb">Le problème</div><p>' + d.probleme + '</p></div>' +
         '<div><div class="lab bd">Le build</div><p>' + d.build + '</p></div>' +
       '</div>' +
-      '<div class="f-section"><div class="lab pb">Contexte</div>' + paragrapheFiche(d.fiche.contexte) + '</div>' +
       '<div class="f-section"><div class="lab pb">Utilisateurs cibles</div>' + paragrapheFiche(d.fiche.utilisateurs) + '</div>' +
-      '<div class="f-section"><div class="lab pb">Fonctionnalités attendues</div>' + paragrapheFiche(d.fiche.fonctionnalites) + '</div>' +
-      '<div class="f-section"><div class="lab pb">Critères de réussite</div>' + paragrapheFiche(d.fiche.criteres) + '</div>' +
-      '<div class="f-section"><div class="lab pb">Bonus</div>' + paragrapheFiche(d.fiche.bonus) + '</div>';
+      '<div class="f-section"><div class="lab pb">Ressources à disposition</div>' + paragrapheFiche(d.fiche.ressources) + '</div>' +
+      '<div class="f-section"><div class="lab pb">Prompt de démarrage</div>' + blocPrompt(d.fiche.prompt) + '</div>' +
+      '<div class="f-section"><div class="lab pb">Bien démarrer avec Claude</div>' + BIEN_DEMARRER_HTML + '</div>' +
+      '<div class="f-section"><div class="lab pb">Une piste pour démarrer</div>' + paragrapheFiche(d.fiche.piste) + '</div>';
     modal.classList.add("ouvert");
     document.body.style.overflow = "hidden";
     ficheOuverte = true;
@@ -482,6 +513,19 @@
   modal.addEventListener("click", function (e) { if (e.target === modal) { fermerFiche(); } });
   document.querySelectorAll(".fiche-lien").forEach(function (btn) {
     btn.addEventListener("click", function () { ouvrirFiche(Number(btn.dataset.defi)); });
+  });
+
+  // Clic sur « Copier » dans le bloc prompt : copie le prompt + retour visuel « Copié ! ».
+  ficheContenu.addEventListener("click", function (e) {
+    const btn = e.target.closest(".prompt-copy");
+    if (!btn) { return; }
+    const txt = btn.closest(".prompt-box").querySelector(".prompt-txt").textContent;
+    copierTexte(txt).then(function () {
+      const avant = btn.innerHTML;
+      btn.classList.add("ok");
+      btn.textContent = "Copié !";
+      setTimeout(function () { btn.innerHTML = avant; btn.classList.remove("ok"); }, 1500);
+    });
   });
 
   // ===== Équipes : capitaine au même niveau (petit ⚓), un nom par ligne =====
