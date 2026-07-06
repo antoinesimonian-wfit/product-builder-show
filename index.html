@@ -108,11 +108,35 @@
   @keyframes monte { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
 
   /* ===== SECTIONS ===== */
-  section { padding: 60px 0; position: relative; }
+  section { padding: 60px 0; position: relative; scroll-margin-top: 72px; }
+  .sep { border: none; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.14), transparent); margin: 0; }
+  .repo-btn { display: inline-flex; align-items: center; gap: 9px; background: var(--cta); color: #fff; text-decoration: none; border-radius: 999px; padding: 11px 22px; font-family: 'Geomanist', sans-serif; font-size: 14px; font-weight: 500; transition: transform .2s, box-shadow .2s; }
+  .repo-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(249,143,3,0.4); }
+  .repo-btn svg { flex-shrink: 0; }
   .sec-head { text-align: center; max-width: 780px; margin: 0 auto 44px; }
   .kicker { font-size: 15px; font-weight: 600; color: var(--orange); margin-bottom: 14px; }
   .sec-head h2 { font-family: 'Publica Play', sans-serif; font-weight: 400; font-size: clamp(2rem, 4.6vw, 3.2rem); line-height: 1.08; letter-spacing: -0.02em; }
   .sec-head p { color: var(--texte-2); margin-top: 14px; }
+
+  /* ===== SECTION "WHAT'S NEXT ?" — feuille de route ===== */
+  .roadmap { list-style: none; max-width: 820px; margin: 0 auto; }
+  .roadmap .etape { position: relative; display: grid; grid-template-columns: 56px 1fr; gap: 26px; padding-bottom: 42px; }
+  .roadmap .etape:last-child { padding-bottom: 0; }
+  .roadmap .etape::before { content: ""; position: absolute; left: 27px; top: 60px; bottom: -2px; width: 2px; background: rgba(249,143,3,0.28); }
+  .roadmap .etape:last-child::before { display: none; }
+  .etape-num { width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; font-family: 'Publica Play', sans-serif; font-size: 18px; color: var(--orange); background: var(--nuit); border: 1px solid var(--orange); position: relative; z-index: 1; }
+  .etape.final .etape-num { background: var(--cta); color: #fff; border-color: transparent; }
+  .etape-txt { padding-top: 4px; }
+  .etape-txt h3 { font-family: 'Publica Play', sans-serif; font-weight: 400; font-size: clamp(1.25rem, 2.2vw, 1.6rem); letter-spacing: -0.01em; margin-bottom: 10px; }
+  .etape-txt p { color: var(--texte-2); font-weight: 300; }
+  .etape-astuce { margin-top: 16px; background: rgba(249,143,3,0.1); border: 1px solid rgba(249,143,3,0.32); border-radius: 14px; padding: 15px 18px; color: var(--texte); font-size: clamp(.95rem, 1.4vw, 1.08rem); font-weight: 300; line-height: 1.55; }
+  .etape-astuce strong { font-weight: 500; color: var(--orange); }
+  .etape-astuce code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.85em; background: rgba(249,143,3,0.18); color: var(--orange); padding: 2px 7px; border-radius: 6px; }
+  @media (max-width: 560px) {
+    .roadmap .etape { grid-template-columns: 44px 1fr; gap: 18px; }
+    .etape-num { width: 44px; height: 44px; font-size: 15px; }
+    .roadmap .etape::before { left: 21px; top: 48px; }
+  }
 
   /* ===== TROIS RAISONS ===== */
   .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
@@ -306,6 +330,7 @@
       <a href="#pourquoi">Pourquoi</a>
       <a href="#defis">Défis</a>
       <a href="#equipes">Équipes</a>
+      <a href="#next">What's next</a>
     </div>
     <span class="onair"><span class="pt"></span>ON AIR</span>
   </div>
@@ -329,6 +354,8 @@
   </div>
 </header>
 
+<div class="wrap"><hr class="sep"></div>
+
 <section id="pourquoi">
   <div class="wrap">
     <div class="sec-head reveal">
@@ -338,6 +365,8 @@
     <div class="grid-3" id="raisons"></div>
   </div>
 </section>
+
+<div class="wrap"><hr class="sep"></div>
 
 <section id="defis" class="studio" style="padding-bottom: 20px;">
   <div class="wrap">
@@ -358,6 +387,8 @@
   </div>
 </section>
 
+<div class="wrap"><hr class="sep"></div>
+
 <section id="equipes" style="padding-top: 20px;">
   <div class="wrap">
     <div class="sec-head reveal">
@@ -375,6 +406,58 @@
     <div class="grid-equipes" id="teams"></div>
   </div>
 </section>
+
+<div class="wrap"><hr class="sep"></div>
+
+<section id="next" style="padding-top: 20px;">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">La suite de l'aventure</div>
+      <h2>What's next <span class="dot">?</span></h2>
+      <p>Le hackathon n'est qu'un point de départ. Voici la feuille de route de votre projet, jusqu'à l'Armada de septembre.</p>
+    </div>
+    <ol class="roadmap">
+      <li class="etape reveal">
+        <div class="etape-num">01</div>
+        <div class="etape-txt">
+          <h3>Déposez votre travail sur GitHub</h3>
+          <p>Le référent met le travail de l'équipe sur son repo GitHub dédié — le lien se trouve dans la fiche de votre équipe.</p>
+        </div>
+      </li>
+      <li class="etape reveal">
+        <div class="etape-num">02</div>
+        <div class="etape-txt">
+          <h3>Continuez tout l'été</h3>
+          <p>L'aventure ne s'arrête pas le 9 juillet : l'équipe fait grandir son projet pendant l'été.</p>
+          <div class="etape-astuce">💡 <strong>Astuce</strong> — Vous pouvez être plusieurs à travailler en même temps sur le même compte Claude, chacun de votre côté, grâce aux branches Git. Pensez à <code>pull</code> régulièrement le travail des autres, et à gérer les conflits au moment des merges sur <code>main</code>.</div>
+        </div>
+      </li>
+      <li class="etape reveal">
+        <div class="etape-num">03</div>
+        <div class="etape-txt">
+          <h3>Mettez en prod à la rentrée</h3>
+          <p>Fin août / début septembre, l'équipe met son projet en production — avec l'appui d'un membre de la squad IA pour brancher les outils WeFiiT.</p>
+        </div>
+      </li>
+      <li class="etape reveal">
+        <div class="etape-num">04</div>
+        <div class="etape-txt">
+          <h3>Publiez sur WeMake</h3>
+          <p>L'équipe partage son projet sur WeMake, la plateforme collaborative qui rassemble tous les chantiers vibe codés de WeFiiT. Et n'oubliez pas de voter pour vos 3 projets préférés&nbsp;!</p>
+        </div>
+      </li>
+      <li class="etape final reveal">
+        <div class="etape-num">05</div>
+        <div class="etape-txt">
+          <h3>Recevez vos prix à l'Armada 🏆</h3>
+          <p>Remise des vrais prix lors de l'Armada de septembre.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<div class="wrap"><hr class="sep"></div>
 
 <footer>
   <div class="fbrand">The Product Builder <span class="show">Show</span><span class="dot">.</span></div>
@@ -644,13 +727,19 @@
         ligneIdentifiant("E-mail", eq.email) +
         ligneIdentifiant("Mot de passe", eq.motdepasse) +
       "</div>";
+    // Lien vers le repo de l'équipe : bouton si l'URL existe, sinon placeholder.
+    const repo = eq.github
+      ? '<a class="repo-btn" href="' + eq.github + '" target="_blank" rel="noopener noreferrer">' +
+          '<svg viewBox="0 0 16 16" width="17" height="17" aria-hidden="true" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> Ouvrir le repo</a>'
+      : '<p class="a-completer">À communiquer</p>';
     equipeContenu.innerHTML =
       '<button class="fiche-fermer" id="fermer-equipe" aria-label="Fermer la fiche">✕</button>' +
       '<div class="f-titre"><span class="emoji">⚓</span><h2>Équipe ' + num + '<span class="dot">.</span></h2></div>' +
       '<div class="f-section"><div class="lab pb">Référent</div><p>' + eq.cap + "</p></div>" +
       '<div class="f-section"><div class="lab pb">Membres de l\'équipe</div><div class="f-membres">' + membres + "</div></div>" +
       '<div class="f-section"><div class="lab pb">Salle</div>' + salle + "</div>" +
-      '<div class="f-section"><div class="lab pb">Identifiants Claude</div>' + identifiants + "</div>";
+      '<div class="f-section"><div class="lab pb">Identifiants Claude</div>' + identifiants + "</div>" +
+      '<div class="f-section"><div class="lab pb">Repo GitHub</div>' + repo + "</div>";
     modalEquipe.classList.add("ouvert");
     document.body.style.overflow = "hidden";
     equipeOuverte = true;
