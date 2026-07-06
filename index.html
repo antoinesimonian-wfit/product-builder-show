@@ -337,11 +337,12 @@
   .equipe .a-completer { color: #8fa0d8; font-style: italic; font-size: 13px; text-align: center; margin-top: 16px; align-self: center; }
 
   /* ===== RECHERCHE D'ÉQUIPE ===== */
-  .recherche { max-width: 380px; margin: 0 0 40px; }
-  .rech-box { display: flex; align-items: center; gap: 10px; background: #fff; border: 1.5px solid rgba(0,40,130,0.3); border-radius: 999px; padding: 6px 6px 6px 18px; box-shadow: 0 8px 20px rgba(0,40,130,0.08); transition: border-color .25s, box-shadow .25s; }
+  .recherche { max-width: 460px; margin: 0 0 40px; }
+  .recherche-label { display: block; font-family: 'Publica Play', sans-serif; font-size: clamp(1.1rem, 2vw, 1.4rem); color: var(--marine); margin-bottom: 14px; }
+  .rech-box { display: flex; align-items: center; gap: 12px; background: #fff; border: 2px solid rgba(0,40,130,0.35); border-radius: 999px; padding: 10px 10px 10px 22px; box-shadow: 0 12px 28px rgba(0,40,130,0.12); transition: border-color .25s, box-shadow .25s; }
   .rech-box:focus-within { border-color: var(--orange); box-shadow: 0 0 0 4px rgba(249,143,3,0.15); }
-  .rech-box .rech-ic { font-size: 15px; opacity: 0.7; }
-  .rech-box input { flex: 1; min-width: 0; background: none; border: none; outline: none; color: var(--marine); font-family: 'Geomanist', sans-serif; font-size: 14.5px; padding: 4px 0; }
+  .rech-box .rech-ic { font-size: 18px; opacity: 0.7; }
+  .rech-box input { flex: 1; min-width: 0; background: none; border: none; outline: none; color: var(--marine); font-family: 'Geomanist', sans-serif; font-size: 16px; padding: 6px 0; }
   .rech-box input::placeholder { color: #8892b8; }
   .rech-go { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; border: none; cursor: pointer; background: var(--cta); color: #fff; font-size: 14px; line-height: 1; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(233,84,0,0.35); transition: transform .2s, box-shadow .2s; }
   .rech-go:hover { transform: scale(1.1); box-shadow: 0 6px 18px rgba(233,84,0,0.55); }
@@ -513,9 +514,10 @@
       <p>Trouvez votre équipe, préparez-vous à rentrer en scène.</p>
     </div>
     <div class="recherche reveal">
+      <label class="recherche-label" for="rech-nom">Quelle est mon équipe<span class="dot">&nbsp;?</span></label>
       <div class="rech-box">
         <span class="rech-ic" aria-hidden="true">🔍</span>
-        <input type="search" id="rech-nom" placeholder="Cherchez votre nom pour trouver votre équipe…" autocomplete="off" aria-label="Rechercher un nom ou prénom">
+        <input type="search" id="rech-nom" placeholder="Nom, prénom…" autocomplete="off" aria-label="Rechercher un nom ou prénom">
         <button class="rech-go" id="rech-go" aria-label="Lancer la recherche" hidden>→</button>
       </div>
     </div>
