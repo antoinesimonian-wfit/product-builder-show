@@ -35,6 +35,7 @@
     font-family: 'Geomanist', sans-serif; color: var(--texte);
     background: var(--nuit); font-size: 17px; line-height: 1.6;
     -webkit-font-smoothing: antialiased; overflow-x: hidden;
+    min-height: 100dvh; display: flex; flex-direction: column;
   }
   .dot { color: var(--orange); }
   .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 32px; }
@@ -59,7 +60,7 @@
   /* ===== HERO : la scène ===== */
   .hero {
     position: relative; text-align: center; padding: 64px 32px 80px; overflow: hidden;
-    min-height: calc(100dvh - 73px); box-sizing: border-box; display: flex; align-items: center; justify-content: center;
+    flex: 1; display: flex; align-items: center; justify-content: center;
     background:
       radial-gradient(ellipse 55% 70% at 30% -10%, rgba(0,66,255,0.4), transparent 60%),
       radial-gradient(ellipse 55% 70% at 70% -10%, rgba(249,143,3,0.22), transparent 60%),
@@ -251,21 +252,13 @@
   .fiche code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.82em; background: rgba(249,143,3,0.16); color: var(--orange); padding: 2px 8px; border-radius: 6px; }
 
   /* ===== MODALE ÉQUIPE ===== */
-  .f-membres { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 28px; }
-  .f-membres .m { font-size: clamp(1.05rem, 1.6vw, 1.3rem); font-weight: 300; color: #d9e0fb; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
-  .f-membres .m:nth-last-child(-n+1) { border-bottom: none; }
-  .creds { display: grid; gap: 14px; }
-  .cred { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 16px 20px; }
-  .cred .cle { font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--orange); min-width: 120px; }
-  .cred .val { font-size: clamp(1rem, 1.5vw, 1.2rem); color: #eef1ff; font-weight: 400; word-break: break-all; }
-  .cred-copy, .prompt-copy { margin-left: auto; flex-shrink: 0; display: inline-flex; align-items: center; gap: 7px; cursor: pointer; background: rgba(249,143,3,0.12); border: 1px solid rgba(249,143,3,0.5); color: var(--orange); border-radius: 999px; padding: 7px 15px; font-family: 'Geomanist', sans-serif; font-size: 12.5px; font-weight: 500; transition: background .2s, color .2s, border-color .2s; }
-  .cred-copy:hover, .prompt-copy:hover { background: var(--orange); color: #041543; }
-  .cred-copy.ok, .prompt-copy.ok { background: #1f9d55; border-color: #1f9d55; color: #fff; }
+  .prompt-copy { margin-left: auto; flex-shrink: 0; display: inline-flex; align-items: center; gap: 7px; cursor: pointer; background: rgba(249,143,3,0.12); border: 1px solid rgba(249,143,3,0.5); color: var(--orange); border-radius: 999px; padding: 7px 15px; font-family: 'Geomanist', sans-serif; font-size: 12.5px; font-weight: 500; transition: background .2s, color .2s, border-color .2s; }
+  .prompt-copy:hover { background: var(--orange); color: #041543; }
+  .prompt-copy.ok { background: #1f9d55; border-color: #1f9d55; color: #fff; }
   /* Bloc "Prompt de démarrage" : texte copiable */
   .fiche .prompt-box { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 18px 20px; }
   .fiche .prompt-box .prompt-txt { margin: 0; font-size: clamp(1rem, 1.5vw, 1.18rem); line-height: 1.6; font-weight: 300; color: #eef1ff; white-space: pre-wrap; }
   .fiche .prompt-box .prompt-actions { display: flex; justify-content: flex-end; margin-top: 16px; }
-  @media (max-width: 620px) { .f-membres { grid-template-columns: 1fr; } }
 
   /* Commandes du carrousel : flèches posées SUR le slideshow, à gauche et à droite */
   .ecran-zone { position: relative; }
@@ -296,18 +289,33 @@
   /* ===== ÉQUIPES : le générique ===== */
   .grid-equipes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
   .equipe {
-    background: #fff; border: 1px solid rgba(0,40,130,0.1);
+    background: linear-gradient(165deg, #0e2a7a 0%, #071d5c 70%);
+    border: 1px solid rgba(255,255,255,0.12);
     border-radius: 18px; padding: 24px 26px; transition: border-color .3s, transform .3s, box-shadow .3s;
-    box-shadow: 0 10px 26px rgba(0,40,130,0.07);
-    cursor: pointer;
+    display: flex; flex-direction: column;
   }
-  .equipe:hover { border-color: rgba(249,143,3,0.4); transform: translateY(-4px); box-shadow: 0 20px 44px rgba(0,40,130,0.14); }
+  .equipe:hover { border-color: rgba(249,143,3,0.4); transform: translateY(-4px); box-shadow: 0 20px 44px rgba(0,0,0,0.35); }
   .equipe .etiquette { font-family: 'Publica Play', sans-serif; font-size: 15px; color: var(--orange); letter-spacing: 0.12em; margin-bottom: 14px; text-align: center; }
-  .equipe .noms { font-size: 14.5px; color: var(--marine); }
-  .equipe .noms .nom { padding: 5px 0; border-bottom: 1px solid rgba(0,40,130,0.08); text-align: center; }
+  .equipe .noms { font-size: 14.5px; color: var(--texte); }
+  .equipe .noms .nom { padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.08); text-align: center; }
   .equipe .noms .nom:last-child { border-bottom: none; }
   .equipe .noms .cap-emoji { font-size: 13px; margin-right: 4px; }
   .equipe .noms .nom-txt { transition: color .2s; }
+  .equipe .equipe-salle {
+    margin-top: 16px; display: inline-flex; align-items: center; gap: 8px;
+    align-self: center; font-size: 14px; font-weight: 600; color: #fff;
+    background: var(--cta); border-radius: 999px; padding: 10px 22px;
+    box-shadow: 0 10px 26px rgba(233,84,0,0.35);
+  }
+  .equipe .repo-lien {
+    margin-top: 14px; align-self: center; display: inline-flex; align-items: center; gap: 6px;
+    color: var(--texte-2); text-decoration: none; font-size: 13px; font-weight: 500;
+    border-bottom: 1px solid rgba(154,168,216,0.35); padding-bottom: 2px;
+    transition: color .2s, border-color .2s;
+  }
+  .equipe .repo-lien:hover { color: var(--orange); border-color: var(--orange); }
+  .equipe .repo-lien svg { flex-shrink: 0; }
+  .equipe .a-completer { color: #8fa0d8; font-style: italic; font-size: 13px; text-align: center; margin-top: 16px; align-self: center; }
 
   /* ===== RECHERCHE D'ÉQUIPE ===== */
   .recherche { max-width: 380px; margin: 0 0 40px; }
@@ -562,11 +570,6 @@
   <div class="fiche" id="fiche-contenu"></div>
 </div>
 
-<!-- Modal pleine page : fiche d'une équipe -->
-<div class="modal" id="modal-equipe" role="dialog" aria-modal="true">
-  <div class="fiche" id="equipe-contenu"></div>
-</div>
-
 <script src="data.js"></script>
 <script>
   // ===== Logo : retour en haut de la page en douceur =====
@@ -621,7 +624,6 @@
       if (e.key === "Escape") { fermerFiche(); }
       return;
     }
-    if (typeof equipeOuverte !== "undefined" && equipeOuverte) { return; }
     if (e.key === "ArrowLeft") { afficherDefi(indexDefi - 1); }
     if (e.key === "ArrowRight") { afficherDefi(indexDefi + 1); }
   });
@@ -706,13 +708,18 @@
 
   // ===== Équipes : capitaine au même niveau (petit ⚓), un nom par ligne =====
   const grilleEquipes = document.getElementById("teams");
+  const SVG_GITHUB = '<svg viewBox="0 0 16 16" width="17" height="17" aria-hidden="true" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>';
   EQUIPES.forEach(function (e, i) {
     const cap = '<div class="nom"><span class="cap-emoji">⚓</span><span class="nom-txt">' + e.cap + '</span></div>';
     const membres = e.membres.map(function (n) {
       return '<div class="nom"><span class="nom-txt">' + n + '</span></div>';
     }).join("");
+    const salle = e.salle ? '<div class="equipe-salle"><span aria-hidden="true">📍</span>' + e.salle + '</div>' : "";
+    const repo = e.github
+      ? '<a class="repo-lien" href="' + e.github + '" target="_blank" rel="noopener noreferrer">' + SVG_GITHUB + ' Repo GitHub</a>'
+      : '<p class="a-completer">Repo à communiquer</p>';
     grilleEquipes.insertAdjacentHTML("beforeend",
-      '<div class="equipe reveal" data-i="' + i + '"><div class="etiquette">ÉQUIPE ' + String(i + 1).padStart(2, "0") + '</div><div class="noms">' + cap + membres + '</div></div>');
+      '<div class="equipe reveal" data-i="' + i + '"><div class="etiquette">ÉQUIPE ' + String(i + 1).padStart(2, "0") + '</div><div class="noms">' + cap + membres + '</div>' + salle + repo + '</div>');
   });
 
   // ===== Recherche d'un nom dans les équipes =====
@@ -793,64 +800,6 @@
     if (e.key === "Enter") { e.preventDefault(); lancerRecherche(); }
   });
 
-  // ===== Modale d'une équipe (ouverte au clic sur une carte) =====
-  const modalEquipe = document.getElementById("modal-equipe");
-  const equipeContenu = document.getElementById("equipe-contenu");
-  let equipeOuverte = false;
-
-  // Une ligne d'identifiant : avec bouton « Copier » si la valeur existe, sinon placeholder.
-  function ligneIdentifiant(cle, valeur) {
-    if (!valeur) {
-      return '<div class="cred"><span class="cle">' + cle + '</span><span class="val a-completer">à communiquer</span></div>';
-    }
-    return '<div class="cred"><span class="cle">' + cle + '</span><span class="val">' + valeur + "</span>" +
-      '<button class="cred-copy" type="button" aria-label="Copier : ' + cle + '"><span aria-hidden="true">📋</span> Copier</button></div>';
-  }
-
-  function ouvrirEquipe(i) {
-    const eq = EQUIPES[i];
-    const num = String(i + 1).padStart(2, "0");
-    const membres = eq.membres.map(function (n) { return '<div class="m">' + n + "</div>"; }).join("");
-    // Salle renseignée dans data.js ; identifiants encore à venir (placeholders).
-    const salle = eq.salle
-      ? "<p>" + eq.salle + "</p>"
-      : '<p class="a-completer">À communiquer</p>';
-    const identifiants =
-      '<div class="creds">' +
-        ligneIdentifiant("E-mail", eq.email) +
-        ligneIdentifiant("Mot de passe", eq.motdepasse) +
-      "</div>";
-    // Lien vers le repo de l'équipe : bouton si l'URL existe, sinon placeholder.
-    const repo = eq.github
-      ? '<a class="repo-btn" href="' + eq.github + '" target="_blank" rel="noopener noreferrer">' +
-          '<svg viewBox="0 0 16 16" width="17" height="17" aria-hidden="true" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> Ouvrir le repo</a>'
-      : '<p class="a-completer">À communiquer</p>';
-    equipeContenu.innerHTML =
-      '<button class="fiche-fermer" id="fermer-equipe" aria-label="Fermer la fiche">✕</button>' +
-      '<div class="f-titre"><span class="emoji">⚓</span><h2>Équipe ' + num + '<span class="dot">.</span></h2></div>' +
-      '<div class="f-section"><div class="lab pb">Référent</div><p>' + eq.cap + "</p></div>" +
-      '<div class="f-section"><div class="lab pb">Membres de l\'équipe</div><div class="f-membres">' + membres + "</div></div>" +
-      '<div class="f-section"><div class="lab pb">Salle</div>' + salle + "</div>" +
-      '<div class="f-section"><div class="lab pb">Identifiants Claude</div>' + identifiants + "</div>" +
-      '<div class="f-section"><div class="lab pb">Repo GitHub</div>' + repo + "</div>";
-    modalEquipe.classList.add("ouvert");
-    document.body.style.overflow = "hidden";
-    equipeOuverte = true;
-    document.getElementById("fermer-equipe").addEventListener("click", fermerEquipe);
-  }
-
-  function fermerEquipe() {
-    modalEquipe.classList.remove("ouvert");
-    document.body.style.overflow = "";
-    equipeOuverte = false;
-  }
-
-  grilleEquipes.addEventListener("click", function (e) {
-    const carte = e.target.closest(".equipe");
-    if (carte) { ouvrirEquipe(Number(carte.dataset.i)); }
-  });
-  modalEquipe.addEventListener("click", function (e) { if (e.target === modalEquipe) { fermerEquipe(); } });
-
   // Copie robuste : API Clipboard si dispo, sinon repli execCommand.
   function copierTexte(txt) {
     if (navigator.clipboard && window.isSecureContext) {
@@ -869,22 +818,6 @@
     try { document.execCommand("copy"); } catch (err) { /* ignoré */ }
     document.body.removeChild(ta);
   }
-
-  // Clic sur « Copier » : copie l'identifiant + retour visuel « Copié ! ».
-  equipeContenu.addEventListener("click", function (e) {
-    const btn = e.target.closest(".cred-copy");
-    if (!btn) { return; }
-    const valeur = btn.closest(".cred").querySelector(".val").textContent;
-    copierTexte(valeur).then(function () {
-      const avant = btn.innerHTML;
-      btn.classList.add("ok");
-      btn.textContent = "Copié !";
-      setTimeout(function () { btn.innerHTML = avant; btn.classList.remove("ok"); }, 1500);
-    });
-  });
-  document.addEventListener("keydown", function (e) {
-    if (equipeOuverte && e.key === "Escape") { fermerEquipe(); }
-  });
 
   // ===== Révélation au scroll =====
   const io = new IntersectionObserver(function (entries) {
