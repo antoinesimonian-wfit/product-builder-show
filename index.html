@@ -62,16 +62,18 @@
       radial-gradient(ellipse 55% 70% at 70% -10%, rgba(249,143,3,0.22), transparent 60%),
       linear-gradient(180deg, #071d5c 0%, var(--nuit) 70%);
   }
-  /* Faisceaux de projecteurs */
+  /* Faisceaux de projecteurs : balayage + pulsation d'intensité, comme des vrais projos de scène */
   .faisceau {
     position: absolute; top: -12%; width: 340px; height: 130%; pointer-events: none;
-    background: linear-gradient(180deg, rgba(255,255,255,0.10), transparent 72%);
+    transform-origin: top center;
+    background: linear-gradient(180deg, rgba(255,255,255,0.16), transparent 72%);
     clip-path: polygon(46% 0, 54% 0, 100% 100%, 0 100%);
-    animation: balaye 9s ease-in-out infinite alternate;
+    animation: balaye 7s ease-in-out infinite alternate, pulse-lumiere 3.6s ease-in-out infinite;
   }
-  .faisceau.g { left: 6%; transform-origin: top center; }
-  .faisceau.d { right: 6%; animation-delay: -4.5s; }
-  @keyframes balaye { from { transform: rotate(-7deg); } to { transform: rotate(7deg); } }
+  .faisceau.g { left: 6%; }
+  .faisceau.d { right: 6%; animation-delay: -3.5s, -1.8s; }
+  @keyframes balaye { from { transform: rotate(-14deg); } to { transform: rotate(14deg); } }
+  @keyframes pulse-lumiere { 0%, 100% { opacity: 0.55; } 50% { opacity: 1; } }
 
   .hero-inner { position: relative; max-width: 960px; margin: 0 auto; }
   .hero-sur { font-size: 16px; font-weight: 500; color: var(--texte-2); margin-bottom: 22px; opacity: 0; animation: monte .8s ease forwards .15s; }
@@ -81,9 +83,22 @@
     margin-bottom: 26px; opacity: 0; animation: monte .9s ease forwards .3s;
   }
   .hero h1 .show {
+    position: relative; display: inline-block;
     background: linear-gradient(135deg, #f15a00, #ff9d24);
     -webkit-background-clip: text; background-clip: text; color: transparent;
     text-shadow: 0 0 80px rgba(249,143,3,0.35);
+  }
+  /* Reflet lumineux qui traverse le mot en boucle, plus large et plus marqué qu'un simple sweep discret */
+  .hero h1 .show::after {
+    content: "Show"; position: absolute; inset: 0;
+    background: linear-gradient(100deg, transparent 30%, rgba(255,255,255,0.95) 50%, transparent 70%);
+    background-size: 250% 100%; background-position: 150% 0;
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    animation: sweep-show 3.2s ease-in-out infinite .8s;
+  }
+  @keyframes sweep-show {
+    0%, 55%, 100% { background-position: 150% 0; }
+    27% { background-position: -50% 0; }
   }
   .hero .punch { font-weight: 300; font-size: clamp(1.3rem, 3vw, 1.9rem); color: var(--texte); margin-bottom: 40px; opacity: 0; animation: monte .9s ease forwards .48s; }
   .btn {
