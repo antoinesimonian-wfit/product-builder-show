@@ -92,7 +92,7 @@ const EQUIPES = [
   { cap: "William FABRIS", membres: ["Noemie GIRAUDEAU", "Océane LEFEVRE", "Anne VELENOVSKY", "Hermine DU VIGNAUX"], salle: "Bureaux WeFiiT", github: "https://github.com/Product-Builder-Show/WeFiiT-Team-03" },
   { cap: "Pauline PELLETIER", membres: ["Amandine ROY", "Alexandre NGUYEN", "Maria NADIFI", "Antoine PIATKOWSKI"], salle: "Bureaux WeFiiT", github: "https://github.com/Product-Builder-Show/WeFiiT-Team-04" },
   { cap: "Chloé DURAND", membres: ["Khadija KARRAY", "Benjamin GOUESLARD", "Jade SYCHAREUN", "Mathieu LE FAUCHEUR"], salle: "Bureaux WeFiiT", github: "https://github.com/Product-Builder-Show/WeFiiT-Team-05" },
-  { cap: "Chris SARKIS", membres: ["Pierre LABLACHE-COMBIER", "Alexandre CARNEADO", "Tharagan SRIKANTHASAMY", "Pablo NEMEJANSKI"], salle: "Salle du WeFiiT Live", github: "https://github.com/Product-Builder-Show/WeFiiT-Team-06" },
+  { cap: "Chris SARKIS", membres: ["Pierre LABLACHE-COMBIER", "Tharagan SRIKANTHASAMY", "Pablo NEMEJANSKI"], salle: "Salle du WeFiiT Live", github: "https://github.com/Product-Builder-Show/WeFiiT-Team-06" },
   { cap: "Ronan BEBIN", membres: ["Baptiste LECACHEUR", "Antoine LE HIR", "Joséphine PILLET", "Victor GODY"], salle: "Salle du WeFiiT Live", github: "https://github.com/Product-Builder-Show/WeFiiT-Team-07" },
   { cap: "Felix NAVARRE", membres: ["Malha CHEBLAL", "Anne-Lise PRICAZ", "Julia MATHURIN", "Mathilde PERRIN"], salle: "Salle du WeFiiT Live", github: "https://github.com/Product-Builder-Show/WeFiiT-Team-08" },
   { cap: "Rodolphe LE BLEVENEC", membres: ["Olivier LEVY", "Inès LACARRIERE", "Léane GOURCY"], salle: "Salle du WeFiiT Live", github: "https://github.com/Product-Builder-Show/WeFiiT-Team-09" },
