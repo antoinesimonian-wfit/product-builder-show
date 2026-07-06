@@ -134,6 +134,6 @@ const FAQS = [
 /* 3 numéros à joindre en cas de blocage (technique, tokens, salle). */
 const HOTLINE = [
   "06 42 72 78 31",
-  "[à compléter]",
-  "[à compléter]"
+  "06 76 73 94 54",
+  "07 88 60 93 20"
 ];
