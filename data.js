@@ -87,29 +87,29 @@ const DEFIS = [
 /* Le capitaine est au même niveau que l'équipage : il apparaît en premier
    dans la liste, signalé seulement par un petit emoji. */
 const EQUIPES = [
-  { cap: "Lucie BIONDI", membres: ["Louis DODEIGNE", "Rohat GEZER", "Jeremy HADDAD", "Yamila DARY"], salle: "Locaux WeFiiT", email: "equipe1@wefiit.com", motdepasse: "1234abcd" },
-  { cap: "Hugo DE LA RUELLE", membres: ["François JACQUEMIN", "Nicolas DENIEUL", "Helena N'GOLLO", "Louis DALLEAU"], salle: "Locaux WeFiiT" },
-  { cap: "William FABRIS", membres: ["Noemie GIRAUDEAU", "Océane LEFEVRE", "Anne VELENOVSKY", "Hermine DU VIGNAUX"], salle: "Locaux WeFiiT" },
-  { cap: "Pauline PELLETIER", membres: ["Amandine ROY", "Alexandre NGUYEN", "Maria NADIFI", "Antoine PIATKOWSKI"], salle: "Locaux WeFiiT" },
-  { cap: "Chloé DURAND", membres: ["Khadija KARRAY", "Benjamin GOUESLARD", "Jade SYCHAREUN", "Mathieu LE FAUCHEUR"], salle: "Locaux WeFiiT" },
-  { cap: "Chris SARKIS", membres: ["Pierre LABLACHE-COMBIER", "Alexandre CARNEADO", "Tharagan SRIKANTHASAMY", "Pablo NEMEJANSKI"], salle: "Salle du Live, 5ème" },
-  { cap: "Ronan BEBIN", membres: ["Baptiste LECACHEUR", "Antoine LE HIR", "Joséphine PILLET", "Victor GODY"], salle: "Salle du Live, 5ème" },
-  { cap: "Felix NAVARRE", membres: ["Malha CHEBLAL", "Anne-Lise PRICAZ", "Julia MATHURIN", "Mathilde PERRIN"], salle: "Salle du Live, 5ème" },
-  { cap: "Rodolphe LE BLEVENEC", membres: ["Olivier LEVY", "Inès LACARRIERE", "Léane GOURCY"], salle: "Salle du Live, 5ème" },
-  { cap: "Thomas VOISIN", membres: ["Antoine BRIQUET", "Matthis HUET", "Léa CRINON"], salle: "Salle Passerelle" },
-  { cap: "Nils VERVAET", membres: ["Leontine BERTHOME", "Hugues DUPROZ", "Alina KSENDZENKO", "Soline BIANQUIS"], salle: "Salle Passerelle" },
-  { cap: "Axel ALIZIER", membres: ["Rayan RAHMANI-MERAITS", "Thomas BIGOT", "Chloé MARTIN"], salle: "Petite salle WeFiiT" },
-  { cap: "Erwan SAVOYEN", membres: ["Cédric LOZAC'H", "Grégoire DELÉVACQUE", "Soukaina SBAI"], salle: "Espaces communs 6ème" },
-  { cap: "Sarah THIEBAUT", membres: ["Christopher WOODS", "Mélanie HENG", "Gaëlle BRICAUD-NG SUI WA", "Amaury SERVIN"], salle: "Espaces communs 6ème" },
-  { cap: "Pauline AGACHE", membres: ["Marwan ZIDANE", "Alice GAILLARD", "Hamza BITER", "Iris HEDOUIN"], salle: "Espaces communs 6ème" },
-  { cap: "Delphine RINGUENET", membres: ["Pierre CHAMOREAU", "Marthe ORTOLO", "Morgane KRAU", "François Xavier CAPELLE"], salle: "Salle Jet, 3ème étage" },
-  { cap: "Emma COLOMBAT", membres: ["Alexis ROBERT", "Alice MAUZ", "Camille LOPEZ", "Paul VALTON"], salle: "Salle Moonraker, 2ème étage" },
-  { cap: "Alice GUERIN", membres: ["Adrien SUBITTE", "Agathe LECOCQ", "Martin BOUZID", "Pauline FAUVEL"], salle: "Salle Viper Mark, 7ème étage" },
-  { cap: "Alice REVEREND", membres: ["Pauline ROBIAL", "Enzo GRANO", "Camille CLAUDE", "Thomas LAUDET"], salle: "Salle Hyperion, 7ème étage" },
-  { cap: "Alain PERRONE", membres: ["Mailis BONHOMMÉ", "Gabriel DIAS COSTA", "Adel BENDJEBBAR"], salle: "Salle Orbit, 3ème étage" },
-  { cap: "Baptiste CLENET", membres: ["Victor NIORE", "Syrine BOURICHA", "Nathan THOMAS"], salle: "Salle Galactica, 7ème étage" },
-  { cap: "Adrien-Ismaël HENRIQUES", membres: ["Laura CABANILLAS NAVARRO", "Axelle TORTAI", "Pauline MASSON"], salle: "Salle Prometheus, 6ème étage" },
-  { cap: "Corentin BARCZYK", membres: ["Marius ROUSSEL", "Anne-Claire GAILLARD", "Elise PEREZ Y LANDAZURI"], salle: "Salle Eltrium, 6ème étage" }
+  { cap: "Lucie BIONDI", membres: ["Louis DODEIGNE", "Rohat GEZER", "Jeremy HADDAD", "Yamila DARY"], salle: "Locaux WeFiiT", email: "equipe1@wefiit.com", motdepasse: "1234abcd", github: "https://github.com/Product-Builder-Show/WeFiiT-Team-01" },
+  { cap: "Hugo DE LA RUELLE", membres: ["François JACQUEMIN", "Nicolas DENIEUL", "Helena N'GOLLO", "Louis DALLEAU"], salle: "Locaux WeFiiT", github: "https://github.com/Product-Builder-Show/WeFiiT-Team-02" },
+  { cap: "William FABRIS", membres: ["Noemie GIRAUDEAU", "Océane LEFEVRE", "Anne VELENOVSKY", "Hermine DU VIGNAUX"], salle: "Locaux WeFiiT", github: "https://github.com/Product-Builder-Show/WeFiiT-Team-03" },
+  { cap: "Pauline PELLETIER", membres: ["Amandine ROY", "Alexandre NGUYEN", "Maria NADIFI", "Antoine PIATKOWSKI"], salle: "Locaux WeFiiT", github: "https://github.com/Product-Builder-Show/WeFiiT-Team-04" },
+  { cap: "Chloé DURAND", membres: ["Khadija KARRAY", "Benjamin GOUESLARD", "Jade SYCHAREUN", "Mathieu LE FAUCHEUR"], salle: "Locaux WeFiiT", github: "https://github.com/Product-Builder-Show/WeFiiT-Team-05" },
+  { cap: "Chris SARKIS", membres: ["Pierre LABLACHE-COMBIER", "Alexandre CARNEADO", "Tharagan SRIKANTHASAMY", "Pablo NEMEJANSKI"], salle: "Salle du Live, 5ème", github: "https://github.com/Product-Builder-Show/WeFiiT-Team-06" },
+  { cap: "Ronan BEBIN", membres: ["Baptiste LECACHEUR", "Antoine LE HIR", "Joséphine PILLET", "Victor GODY"], salle: "Salle du Live, 5ème", github: "https://github.com/Product-Builder-Show/WeFiiT-Team-07" },
+  { cap: "Felix NAVARRE", membres: ["Malha CHEBLAL", "Anne-Lise PRICAZ", "Julia MATHURIN", "Mathilde PERRIN"], salle: "Salle du Live, 5ème", github: "https://github.com/Product-Builder-Show/WeFiiT-Team-08" },
+  { cap: "Rodolphe LE BLEVENEC", membres: ["Olivier LEVY", "Inès LACARRIERE", "Léane GOURCY"], salle: "Salle du Live, 5ème", github: "https://github.com/Product-Builder-Show/WeFiiT-Team-09" },
+  { cap: "Thomas VOISIN", membres: ["Antoine BRIQUET", "Matthis HUET", "Léa CRINON"], salle: "Salle Passerelle", github: "https://github.com/Product-Builder-Show/WeFiiT-Team-10" },
+  { cap: "Nils VERVAET", membres: ["Leontine BERTHOME", "Hugues DUPROZ", "Alina KSENDZENKO", "Soline BIANQUIS"], salle: "Salle Passerelle", github: "https://github.com/Product-Builder-Show/WeFiiT-Team-11" },
+  { cap: "Axel ALIZIER", membres: ["Rayan RAHMANI-MERAITS", "Thomas BIGOT", "Chloé MARTIN"], salle: "Petite salle WeFiiT", github: "https://github.com/Product-Builder-Show/WeFiiT-Team-12" },
+  { cap: "Erwan SAVOYEN", membres: ["Cédric LOZAC'H", "Grégoire DELÉVACQUE", "Soukaina SBAI"], salle: "Espaces communs 6ème", github: "https://github.com/Product-Builder-Show/WeFiiT-Team-13" },
+  { cap: "Sarah THIEBAUT", membres: ["Christopher WOODS", "Mélanie HENG", "Gaëlle BRICAUD-NG SUI WA", "Amaury SERVIN"], salle: "Espaces communs 6ème", github: "https://github.com/Product-Builder-Show/WeFiiT-Team-14" },
+  { cap: "Pauline AGACHE", membres: ["Marwan ZIDANE", "Alice GAILLARD", "Hamza BITER", "Iris HEDOUIN"], salle: "Espaces communs 6ème", github: "https://github.com/Product-Builder-Show/WeFiiT-Team-15" },
+  { cap: "Delphine RINGUENET", membres: ["Pierre CHAMOREAU", "Marthe ORTOLO", "Morgane KRAU", "François Xavier CAPELLE"], salle: "Salle Jet, 3ème étage", github: "https://github.com/Product-Builder-Show/WeFiiT-Team-16" },
+  { cap: "Emma COLOMBAT", membres: ["Alexis ROBERT", "Alice MAUZ", "Camille LOPEZ", "Paul VALTON"], salle: "Salle Moonraker, 2ème étage", github: "https://github.com/Product-Builder-Show/WeFiiT-Team-17" },
+  { cap: "Alice GUERIN", membres: ["Adrien SUBITTE", "Agathe LECOCQ", "Martin BOUZID", "Pauline FAUVEL"], salle: "Salle Viper Mark, 7ème étage", github: "https://github.com/Product-Builder-Show/WeFiiT-Team-18" },
+  { cap: "Alice REVEREND", membres: ["Pauline ROBIAL", "Enzo GRANO", "Camille CLAUDE", "Thomas LAUDET"], salle: "Salle Hyperion, 7ème étage", github: "https://github.com/Product-Builder-Show/WeFiiT-Team-19" },
+  { cap: "Alain PERRONE", membres: ["Mailis BONHOMMÉ", "Gabriel DIAS COSTA", "Adel BENDJEBBAR"], salle: "Salle Orbit, 3ème étage", github: "https://github.com/Product-Builder-Show/WeFiiT-Team-20" },
+  { cap: "Baptiste CLENET", membres: ["Victor NIORE", "Syrine BOURICHA", "Nathan THOMAS"], salle: "Salle Galactica, 7ème étage", github: "https://github.com/Product-Builder-Show/WeFiiT-Team-21" },
+  { cap: "Adrien-Ismaël HENRIQUES", membres: ["Laura CABANILLAS NAVARRO", "Axelle TORTAI", "Pauline MASSON"], salle: "Salle Prometheus, 6ème étage", github: "https://github.com/Product-Builder-Show/WeFiiT-Team-22" },
+  { cap: "Corentin BARCZYK", membres: ["Marius ROUSSEL", "Anne-Claire GAILLARD", "Elise PEREZ Y LANDAZURI"], salle: "Salle Eltrium, 6ème étage", github: "https://github.com/Product-Builder-Show/WeFiiT-Team-23" }
 ];
 
 const RAISONS = [
@@ -129,4 +129,11 @@ const FAQS = [
   { q: "Faut-il savoir coder ?", a: "[à compléter]" },
   { q: "Comment se déroule la restitution ?", a: "[à compléter]" },
   { q: "Quels sont les critères du jury ?", a: "[à compléter]" }
+];
+
+/* 3 numéros à joindre en cas de blocage (technique, tokens, salle). */
+const HOTLINE = [
+  "06 42 72 78 31",
+  "[à compléter]",
+  "[à compléter]"
 ];
