@@ -41,7 +41,8 @@
 
   /* ===== NAV ===== */
   nav { position: relative; z-index: 100; background: rgba(4,21,67,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.07); }
-  .nav-inner { max-width: var(--maxw); margin: 0 auto; padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .nav-inner { max-width: var(--maxw); margin: 0 auto; padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+  .nav-links { margin-left: auto; }
   .brand { font-family: 'Publica Play', sans-serif; font-size: 21px; color: #fff; text-decoration: none; cursor: pointer; }
   .onair {
     display: inline-flex; align-items: center; gap: 8px;
@@ -58,7 +59,7 @@
   /* ===== HERO : la scène ===== */
   .hero {
     position: relative; text-align: center; padding: 64px 32px 80px; overflow: hidden;
-    min-height: calc(100vh - 73px); display: flex; align-items: center; justify-content: center;
+    min-height: calc(100dvh - 73px); box-sizing: border-box; display: flex; align-items: center; justify-content: center;
     background:
       radial-gradient(ellipse 55% 70% at 30% -10%, rgba(0,66,255,0.4), transparent 60%),
       radial-gradient(ellipse 55% 70% at 70% -10%, rgba(249,143,3,0.22), transparent 60%),
@@ -309,8 +310,8 @@
   .equipe .noms .nom-txt { transition: color .2s; }
 
   /* ===== RECHERCHE D'ÉQUIPE ===== */
-  .recherche { max-width: 380px; margin: 0 auto 40px; }
-  .rech-box { display: flex; align-items: center; gap: 10px; background: #fff; border: 1px solid rgba(0,40,130,0.14); border-radius: 999px; padding: 6px 6px 6px 18px; transition: border-color .25s, box-shadow .25s; }
+  .recherche { max-width: 380px; margin: 0 0 40px; }
+  .rech-box { display: flex; align-items: center; gap: 10px; background: #fff; border: 1.5px solid rgba(0,40,130,0.3); border-radius: 999px; padding: 6px 6px 6px 18px; box-shadow: 0 8px 20px rgba(0,40,130,0.08); transition: border-color .25s, box-shadow .25s; }
   .rech-box:focus-within { border-color: var(--orange); box-shadow: 0 0 0 4px rgba(249,143,3,0.15); }
   .rech-box .rech-ic { font-size: 15px; opacity: 0.7; }
   .rech-box input { flex: 1; min-width: 0; background: none; border: none; outline: none; color: var(--marine); font-family: 'Geomanist', sans-serif; font-size: 14.5px; padding: 4px 0; }
@@ -398,7 +399,6 @@
       <a href="#hotline">Hotline</a>
       <a href="#next">What's next</a>
     </div>
-    <span class="onair"><span class="pt"></span>ON AIR</span>
   </div>
 </nav>
 
