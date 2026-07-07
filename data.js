@@ -119,9 +119,9 @@ const EQUIPES = [
 ];
 
 const RAISONS = [
-  { emoji: "🚀", titre: "Montez en compétence sur l'IA", texte: "Apprenez en faisant : créez par vous-mêmes de vrais outils internes. Le learning by doing, grandeur nature." },
-  { emoji: "🛠️", titre: "Créez des outils utiles à WeFiiT", texte: "Des livrables réutilisables, à réelle valeur ajoutée pour les tribes de l'entreprise." },
-  { emoji: "🤝", titre: "Vivez un moment collectif", texte: "Émulation, cohésion et partage entre WeFiiTers autour de l'apprentissage de l'IA." }
+  { emoji: "🚀", titre: "Apprendre à builder avec l'IA", texte: "Deux heures pour prendre en main Claude sur un vrai projet, pas un tutoriel. On apprend en faisant, pas en regardant." },
+  { emoji: "🛠️", titre: "Créer de la valeur pour WeFiiT", texte: "Chaque équipe choisit un vrai besoin de l'entreprise et livre un prototype qui peut vivre après le hackathon." },
+  { emoji: "🤝", titre: "Vivre un moment d'équipe", texte: "Deux heures en équipe, dans la même salle, pour construire ensemble — loin du train-train du quotidien." }
 ];
 
 const OUTILS = [
