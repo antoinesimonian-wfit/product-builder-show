@@ -53,7 +53,7 @@
   .onair .pt { width: 8px; height: 8px; border-radius: 50%; background: var(--orange); animation: pulse 1.6s infinite; }
   @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(249,143,3,0.7); } 70% { box-shadow: 0 0 0 9px rgba(249,143,3,0); } 100% { box-shadow: 0 0 0 0 rgba(249,143,3,0); } }
   .nav-links { display: flex; gap: 26px; margin-left: auto; }
-  .nav-links a { color: var(--texte-2); text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; transition: color .2s; }
+  .nav-links a { color: var(--texte-2); text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 0.02em; transition: color .2s; }
   .nav-links a:hover { color: var(--orange); }
 
   /* ===== Menu burger (mobile) ===== */
@@ -300,10 +300,12 @@
   .fleche.droite { right: 22px; }
   .fleche:hover { background: rgba(249,143,3,0.35); border-color: var(--orange); transform: translateY(-50%) scale(1.08); }
   @media (max-width: 640px) {
-    .fleche { width: 46px; height: 46px; font-size: 19px; }
+    .fleche { width: 40px; height: 40px; font-size: 17px; top: auto; bottom: 22px; transform: none; }
     .fleche.gauche { left: 10px; }
     .fleche.droite { right: 10px; }
-    .diapo { padding: 40px 24px; }
+    .fleche:hover { transform: scale(1.08); }
+    .diapo { padding: 40px 24px 90px; }
+    .commandes { bottom: auto; top: calc(100% + 16px); position: static; margin-top: 16px; }
   }
   /* Pagination intégrée en bas de la carte, superposée à l'écran */
   .commandes {
@@ -436,7 +438,7 @@
     <a href="#top" class="brand" aria-label="Retour en haut de la page">WeFiiT<span class="dot">.</span> Live</a>
     <div class="nav-links" id="nav-links">
       <a href="#pourquoi">Pourquoi</a>
-      <a href="#defis">Défis</a>
+      <a href="#defis">Uses cases</a>
       <a href="#demarrage">Démarrage</a>
       <a href="#equipes">Équipes</a>
       <a href="#hotline">Hotline</a>
@@ -454,7 +456,7 @@
   <div class="hero-inner">
     <p class="hero-logo">We<span class="dot">.</span>FiiT</p>
     <h1><span class="accent">Product Builder</span> Show</h1>
-    <p class="punch">Deux heures pour générer un impact chez WeFiiT<span class="dot">.</span></p>
+    <p class="punch">Deux heures pour builder avec impact chez WeFiiT<span class="dot">.</span></p>
     <div class="presente">
       <p class="presente-label">Présenté par</p>
       <div class="presente-photos">
@@ -472,7 +474,7 @@
 <section id="pourquoi" class="alt">
   <div class="wrap">
     <div class="sec-head reveal">
-      <h2>Notre WHY<span class="dot">.</span></h2>
+      <h2>Le WHY<span class="dot">.</span></h2>
     </div>
     <div class="grid-3" id="raisons"></div>
   </div>
@@ -484,7 +486,6 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <h2>6 défis, un seul objectif : l'impact<span class="dot">.</span></h2>
-      <p>À vous de jouer !</p>
     </div>
   </div>
   <div class="wrap-large">
@@ -524,7 +525,6 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <h2>Les équipes<span class="dot">.</span></h2>
-      <p>Trouvez votre équipe, préparez-vous à rentrer en scène.</p>
     </div>
     <div class="recherche reveal">
       <label class="recherche-label" for="rech-nom">Quelle est mon équipe<span class="dot">&nbsp;?</span></label>
@@ -544,7 +544,7 @@
   <div class="wrap hotline">
     <div class="sec-head reveal">
       <h2>Une urgence, un blocage<span class="dot">.</span></h2>
-      <p>Bug, plus de tokens, souci de salle : ces 3 numéros vous dépannent.</p>
+      <p>Plus de tokens, souci de salle, blocage technique : ces 3 numéros vous dépannent.</p>
     </div>
     <div class="hotline-carrousel reveal" id="hotline-carrousel"></div>
     <div class="hotline-points points" id="hotline-points"></div>
