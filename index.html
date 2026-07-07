@@ -510,7 +510,7 @@
       <p>Scannez le QR Code<span class="dot">.</span></p>
     </div>
     <div class="demarrage-blocs">
-      <div class="compte-a-rebours reveal" id="chrono" aria-live="polite">05:00</div>
+      <div class="compte-a-rebours reveal" id="chrono" aria-live="polite">01:20:00</div>
       <div class="qr-boite reveal">
         <img src="photos/qrcode.svg" alt="QR code vers la page du Product Builder Show" width="220" height="220">
         <div class="qr-legende">Scannez pour retrouver cette page</div>
@@ -888,13 +888,13 @@
   }, { threshold: 0.1 });
   document.querySelectorAll(".reveal").forEach(function (el) { io.observe(el); });
 
-  // ===== Compte à rebours de 5 minutes, déclenché à l'apparition de la section =====
+  // ===== Compte à rebours de 1h20, déclenché à l'apparition de la section =====
   const chrono = document.getElementById("chrono");
   const ioChrono = new IntersectionObserver(function (entries) {
     entries.forEach(function (en) {
       if (!en.isIntersecting) { return; }
       ioChrono.unobserve(en.target);
-      demarrerChrono(5 * 60);
+      demarrerChrono(80 * 60);
     });
   }, { threshold: 0.4 });
   ioChrono.observe(chrono);
@@ -913,9 +913,12 @@
 
   function afficherChrono(secondes) {
     const s = Math.max(secondes, 0);
-    const min = String(Math.floor(s / 60)).padStart(2, "0");
+    const heures = Math.floor(s / 3600);
+    const min = String(Math.floor((s % 3600) / 60)).padStart(2, "0");
     const sec = String(s % 60).padStart(2, "0");
-    chrono.textContent = min + ":" + sec;
+    chrono.textContent = heures > 0
+      ? String(heures).padStart(2, "0") + ":" + min + ":" + sec
+      : min + ":" + sec;
   }
 
   // ===== Hotline : carrousel automatique des 3 numéros, en boucle =====
