@@ -39,7 +39,7 @@
   }
   .dot { color: var(--orange); }
   .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 32px; }
-  .wrap-large { max-width: 1680px; margin: 0 auto; padding: 0 24px; }
+  .wrap-large { max-width: 1360px; margin: 0 auto; padding: 0 24px; }
 
   /* ===== NAV ===== */
   nav { position: relative; z-index: 100; background: rgba(4,21,67,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.07); }
@@ -200,34 +200,40 @@
     position: relative; border-radius: 26px; overflow: hidden;
     background: linear-gradient(165deg, #0e2a7a 0%, #071d5c 70%);
     border: 1px solid rgba(255,255,255,0.12);
-    min-height: min(66vh, 640px); display: grid;
+    min-height: min(70vh, 680px); display: grid;
   }
   .diapo {
-    grid-area: 1 / 1; padding: clamp(40px, 6vw, 84px);
-    display: flex; flex-direction: column; justify-content: center;
+    grid-area: 1 / 1; padding: clamp(48px, 5vw, 64px) clamp(96px, 9vw, 130px) clamp(72px, 8vw, 96px);
+    display: flex; flex-direction: column; justify-content: flex-start;
     opacity: 0; transform: scale(0.985); transition: opacity .5s ease, transform .5s ease;
     pointer-events: none;
   }
   .diapo.active { opacity: 1; transform: scale(1); pointer-events: auto; }
-  .diapo .haut { display: flex; align-items: center; gap: 20px; margin-bottom: 30px; }
-  .diapo .num { font-family: 'Publica Play', sans-serif; font-size: clamp(1.2rem, 2vw, 1.6rem); color: var(--orange); letter-spacing: 0.06em; }
-  .diapo .emoji { font-size: clamp(2.4rem, 4vw, 3.4rem); }
-  .diapo h3 { font-family: 'Publica Play', sans-serif; font-weight: 400; font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.04; letter-spacing: -0.02em; margin-bottom: 36px; }
-  .diapo .colonnes { display: grid; grid-template-columns: 1fr 1.35fr; gap: clamp(28px, 4vw, 60px); }
-  .diapo .lab { font-size: 15px; font-weight: 600; margin-bottom: 12px; }
-  .lab.pb { color: var(--orange); }
-  .lab.bd { color: #6f8dff; }
-  .diapo .colonnes p { font-size: clamp(1.05rem, 1.7vw, 1.4rem); font-weight: 300; line-height: 1.55; color: #d9e0fb; }
+  .diapo .haut { display: flex; align-items: center; gap: 20px; margin-bottom: 40px; flex-wrap: wrap; }
+  .diapo .num { font-family: 'Publica Play', sans-serif; font-size: clamp(0.95rem, 1.5vw, 1.15rem); color: var(--orange); letter-spacing: 0.06em; }
+  .diapo h3 { font-family: 'Publica Play', sans-serif; font-weight: 400; font-size: clamp(2.4rem, 4.6vw, 3.4rem); line-height: 1.04; letter-spacing: -0.02em; }
+  .diapo .emoji { font-size: clamp(2.4rem, 4.6vw, 3.4rem); }
+  /* Sous-titre de constat, sous le titre du défi */
+  .diapo .constat { font-size: clamp(1.05rem, 1.6vw, 1.25rem); font-weight: 400; line-height: 1.55; color: #9aa8d8; margin-bottom: 34px; max-width: 46em; }
 
-  /* Lien vers la fiche complète du défi */
+  /* Bloc Problème → On build : deux colonnes, la flèche colle au texte du problème */
+  .diapo .colonnes { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 4vw, 48px); align-items: start; }
+  .diapo .lab { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px; }
+  .lab.pb { color: #8892b8; }
+  .lab.bd { color: var(--orange); }
+  .diapo .colonnes p { font-size: clamp(1.05rem, 1.6vw, 1.3rem); font-weight: 450; line-height: 1.6; color: #d9e0fb; }
+  .diapo .fleche-ap { color: var(--orange); font-weight: 700; margin-left: 8px; }
+
+  /* CTA vers la fiche complète du défi : pilule en dégradé orange */
   .fiche-lien {
-    align-self: flex-start; margin-top: 34px; background: none; border: none; cursor: pointer;
-    font-family: 'Geomanist', sans-serif; font-size: 16px; font-weight: 500; color: var(--orange);
-    display: inline-flex; align-items: center; gap: 10px; padding: 0;
-    border-bottom: 1.5px solid rgba(249,143,3,0.4); padding-bottom: 6px;
-    transition: border-color .25s, gap .25s;
+    align-self: flex-start; margin-top: 34px; cursor: pointer;
+    font-family: 'Geomanist', sans-serif; font-size: 15px; font-weight: 500; color: #fff;
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--cta); border: none; border-radius: 999px; padding: 13px 28px;
+    box-shadow: 0 10px 28px rgba(233,84,0,0.4);
+    transition: transform .25s, box-shadow .25s, gap .25s;
   }
-  .fiche-lien:hover { border-color: var(--orange); gap: 16px; }
+  .fiche-lien:hover { transform: translateY(-2px); box-shadow: 0 16px 38px rgba(233,84,0,0.55); gap: 16px; }
 
   /* ===== MODAL FICHE DÉFI (plein écran) ===== */
   .modal {
@@ -256,7 +262,8 @@
   .fiche .f-titre { display: flex; align-items: center; gap: 22px; margin-bottom: 44px; }
   .fiche .f-titre .emoji { font-size: clamp(2.4rem, 4vw, 3.4rem); }
   .fiche h2 { font-family: 'Publica Play', sans-serif; font-weight: 400; font-size: clamp(2rem, 4.6vw, 3.6rem); line-height: 1.05; letter-spacing: -0.02em; }
-  .fiche .f-resume { display: grid; grid-template-columns: 1fr 1.35fr; gap: clamp(24px, 3.5vw, 52px); padding-bottom: 40px; margin-bottom: 44px; border-bottom: 1px solid rgba(255,255,255,0.14); }
+  .fiche .f-constat { font-size: clamp(1.1rem, 1.7vw, 1.3rem); font-weight: 400; line-height: 1.6; color: #9aa8d8; margin-bottom: 34px; max-width: 46em; }
+  .fiche .f-resume { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 4vw, 48px); align-items: start; padding-bottom: 40px; margin-bottom: 44px; border-bottom: 1px solid rgba(255,255,255,0.14); }
   .fiche .f-section { margin-bottom: 40px; }
   .fiche .f-section:last-child { margin-bottom: 6px; }
   .fiche .lab { font-size: 13px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 14px; }
@@ -296,10 +303,15 @@
     .fleche { width: 46px; height: 46px; font-size: 19px; }
     .fleche.gauche { left: 10px; }
     .fleche.droite { right: 10px; }
+    .diapo { padding: 40px 24px; }
   }
-  .commandes { display: flex; align-items: center; justify-content: center; gap: 26px; margin-top: 30px; }
-  .compteur { font-family: 'Publica Play', sans-serif; font-size: 19px; letter-spacing: 0.1em; color: #8892b8; min-width: 92px; text-align: center; }
-  .compteur .cur { color: var(--marine); }
+  /* Pagination intégrée en bas de la carte, superposée à l'écran */
+  .commandes {
+    position: absolute; left: 0; right: 0; bottom: 22px; z-index: 5;
+    display: flex; align-items: center; justify-content: center; gap: 18px;
+  }
+  .compteur { font-family: 'Publica Play', sans-serif; font-size: 15px; letter-spacing: 0.1em; color: #8892b8; min-width: 80px; text-align: center; }
+  .compteur .cur { color: #fff; }
   .points { display: flex; gap: 9px; }
   .point { width: 9px; height: 9px; border-radius: 50%; background: rgba(255,255,255,0.2); cursor: pointer; border: none; padding: 0; transition: background .25s, transform .25s; }
   .point.actif { background: var(--orange); transform: scale(1.3); }
@@ -349,6 +361,7 @@
   .rech-go[hidden] { display: none; }
   mark.hl { background: var(--orange); color: #041543; border-radius: 4px; padding: 0 3px; font-weight: 500; }
   .equipe.cible { border-color: var(--orange); box-shadow: 0 0 0 1px var(--orange), 0 18px 50px rgba(249,143,3,0.18); }
+  .equipe.masquee { display: none; }
 
   /* ===== COMPTE À REBOURS + QR CODE ===== */
   .demarrage { text-align: center; }
@@ -479,10 +492,10 @@
       <div class="ecran" id="ecran"></div>
       <button class="fleche gauche" id="prec" aria-label="Défi précédent">←</button>
       <button class="fleche droite" id="suiv" aria-label="Défi suivant">→</button>
-    </div>
-    <div class="commandes reveal">
-      <div class="compteur"><span class="cur" id="cur">01</span> / <span id="tot">06</span></div>
-      <div class="points" id="points"></div>
+      <div class="commandes">
+        <div class="compteur"><span class="cur" id="cur">01</span> / <span id="tot">06</span></div>
+        <div class="points" id="points"></div>
+      </div>
     </div>
   </div>
 </section>
@@ -639,11 +652,11 @@
     const num = String(i + 1).padStart(2, "0");
     ecran.insertAdjacentHTML("beforeend",
       '<div class="diapo" data-i="' + i + '">' +
-        '<div class="haut"><span class="num">DÉFI ' + num + '</span><span class="emoji">' + d.emoji + '</span></div>' +
-        '<h3>' + d.titre + '<span class="dot">.</span></h3>' +
+        '<div class="haut"><span class="emoji">' + d.emoji + '</span><h3>' + d.titre + '<span class="dot">.</span></h3></div>' +
+        '<p class="constat">' + d.constat + '</p>' +
         '<div class="colonnes">' +
-          '<div><div class="lab pb">Le problème</div><p>' + d.probleme + '</p></div>' +
-          '<div><div class="lab bd">Le build</div><p>' + d.build + '</p></div>' +
+          '<div class="avant"><div class="lab pb">Problème</div><p>' + d.probleme + ' <span class="fleche-ap" aria-hidden="true">→</span></p></div>' +
+          '<div class="build-bloc"><div class="lab bd">On build</div><p>' + d.build + '</p></div>' +
         '</div>' +
         '<button class="fiche-lien" data-defi="' + i + '">Voir la fiche complète du défi <span aria-hidden="true">→</span></button>' +
       '</div>');
@@ -712,9 +725,10 @@
       '<button class="fiche-fermer" id="fermer" aria-label="Fermer la fiche">✕</button>' +
       '<div class="f-kicker">FICHE DÉFI ' + num + '</div>' +
       '<div class="f-titre"><span class="emoji">' + d.emoji + '</span><h2>' + d.titre + '<span class="dot">.</span></h2></div>' +
+      '<p class="f-constat">' + d.constat + '</p>' +
       '<div class="f-resume">' +
-        '<div><div class="lab pb">Le problème</div><p>' + d.probleme + '</p></div>' +
-        '<div><div class="lab bd">Le build</div><p>' + d.build + '</p></div>' +
+        '<div class="avant"><div class="lab pb">Problème</div><p>' + d.probleme + ' <span class="fleche-ap" aria-hidden="true">→</span></p></div>' +
+        '<div class="build-bloc"><div class="lab bd">On build</div><p>' + d.build + '</p></div>' +
       '</div>' +
       '<div class="f-section"><div class="lab pb">Utilisateurs cibles</div>' + paragrapheFiche(d.fiche.utilisateurs) + '</div>' +
       '<div class="f-section"><div class="lab pb">Ressources à disposition</div>' + paragrapheFiche(d.fiche.ressources) + '</div>' +
@@ -791,7 +805,7 @@
 
   function reinit() {
     indexNoms.forEach(function (m) { m.el.textContent = m.nom; });
-    grilleEquipes.querySelectorAll(".equipe.cible").forEach(function (e) { e.classList.remove("cible"); });
+    grilleEquipes.querySelectorAll(".equipe").forEach(function (e) { e.classList.remove("cible"); e.classList.remove("masquee"); });
   }
 
   function surligner(m, nq) {
@@ -806,7 +820,11 @@
   function allerA(i) {
     if (!resultats.length) return;
     courant = (i + resultats.length) % resultats.length;
-    grilleEquipes.querySelectorAll(".equipe.cible").forEach(function (e) { e.classList.remove("cible"); });
+    const equipesResultats = resultats.map(function (m) { return m.equipe; });
+    grilleEquipes.querySelectorAll(".equipe").forEach(function (e) {
+      e.classList.remove("cible");
+      e.classList.toggle("masquee", equipesResultats.indexOf(e) === -1);
+    });
     const m = resultats[courant];
     m.equipe.classList.add("seen", "cible"); // "seen" force l'affichage même si pas encore révélé au scroll
     m.equipe.scrollIntoView({ behavior: "smooth", block: "center" });

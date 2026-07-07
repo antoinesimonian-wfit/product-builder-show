@@ -19,8 +19,9 @@ const DEFIS = [
   {
     emoji: "🎲",
     titre: "Escape Game Onboarding",
-    probleme: "Le premier jour chez WeFiiT est souvent une avalanche d'infos difficile à retenir.",
-    build: "Un escape game digital où le nouvel arrivant résout des énigmes basées sur la culture, les outils et les valeurs WeFiiT pour « déverrouiller » son accès à l'équipe.",
+    constat: "L'onboarding, c'est un jour charnière dans la vie de tout consultant chez WeFiiT, et aussi un moment où il y a beaucoup d'informations à digérer.",
+    probleme: "Comment aider chaque nouveau WeFiiTer à s'approprier tous les éléments de notre culture WeFiiT suite à son onboarding ?",
+    build: "Un escape game où le nouvel arrivant avance d'énigme en énigme pour découvrir la culture, les outils et l'équipe WeFiiT.",
     fiche: Object.assign({}, FICHE_VIDE, {
       utilisateurs: "Les nouveaux arrivants, pendant leurs premiers jours chez WeFiiT, et les managers ou RH qui les accueillent et veulent une intégration mémorable plutôt qu'une avalanche de slides.",
       piste: "Une chasse au trésor guidée : le nouvel arrivant avance d'énigme en énigme pour découvrir la culture, les outils et l'équipe WeFiiT.",
@@ -28,21 +29,23 @@ const DEFIS = [
     })
   },
   {
-    emoji: "🏆",
-    titre: "Vitrine des Réalisations",
-    probleme: "Les beaux livrables produits en mission restent invisibles en interne, donc peu valorisés lors des évaluations ou des pitchs commerciaux.",
-    build: "Une galerie interactive où chacun poste un livrable marquant (anonymisé si besoin), taguée par compétence et secteur, consultable par tous.",
+    emoji: "🧰",
+    titre: "Notre toolkit agentique WeFiiT",
+    constat: "En mission, chaque WeFiiTer brille déjà avec ses propres agents IA : Discovery, Test Utilisateur, User Stories, Test Automatisé.",
+    probleme: "Comment aider chaque WeFiiTer à construire des agents IA alignés sur nos standards de qualité Product Management ?",
+    build: "Des agents signature WeFiiT, reconnaissables, alignés sur nos standards de qualité Product Management.",
     fiche: Object.assign({}, FICHE_VIDE, {
-      utilisateurs: "Les consultants qui veulent valoriser un livrable marquant, et les commerciaux ou managers qui cherchent des références concrètes pour un pitch client.",
-      piste: "L'app store des dernières MEP : une galerie où chaque mise en production récente s'affiche comme une app, avec sa vignette, ses tags et son impact.",
-      prompt: "On construit une galerie interne des réalisations WeFiiT, façon « app store des dernières MEP » : chaque livrable s'affiche en carte avec vignette, tags (compétence, secteur) et impact, consultable par tous. Stack : Claude, GitHub, Supabase. Avant de coder, propose-moi un plan : le modèle de données d'une carte et les 3 écrans essentiels d'une V1 en 2h. J'utilise /plan, je valide, puis on code."
+      utilisateurs: "Tous les consultants WeFiiT, au quotidien sur leurs missions, qui veulent des agents fiables et partagés plutôt que de bricoler les leurs dans leur coin.",
+      piste: "Une galerie d'agents partagés : chaque agent a sa fiche (rôle, quand l'utiliser) et un bouton pour copier son prompt.",
+      prompt: "On construit une galerie d'agents partagés pour les consultants WeFiiT (OKR, discovery, user stories, tests) : chaque agent a sa fiche (rôle, quand l'utiliser) et un bouton pour copier son prompt. Stack : Claude, GitHub, Supabase. Avant de coder, propose-moi un plan : la structure d'une fiche agent et les 3 fonctionnalités d'une V1 en 2h. J'utilise /plan, je valide, puis on code."
     })
   },
   {
     emoji: "🖼️",
-    titre: "Brief du consultant",
-    probleme: "Le brief est la vitrine du consultant. Aujourd'hui les briefs sont jugés trop longs, avec un design vieilli et sans mise en avant des compétences IA.",
-    build: "Une plateforme pour créer ses briefs avec assistance à la rédaction et mise en avant de son impact et de ses compétences IA. Design épuré, à l'image de WeFiiT, où le client comprend le profil du consultant dès la première page.",
+    titre: "Notre brief WeFiiT augmenté par l'IA",
+    constat: "Le brief DoYouBuzz est notre vitrine en tant que consultants, aujourd'hui il fait 7 à 10 pages, avec un template générique qui ne montre pas encore nos compétences IA.",
+    probleme: "Comment moderniser notre brief et en faire une vitrine de notre expertise en Product Management IA ?",
+    build: "Un template plus compact, intégrant nos compétences IA, avec des déclinaisons personnalisées par compétence.",
     fiche: Object.assign({}, FICHE_VIDE, {
       utilisateurs: "Les consultants qui préparent leur brief avant une mission ou un entretien client, et les PADs qui les présentent aux clients.",
       piste: "Un générateur de brief avec score de lisibilité : l'IA rédige le brief et un indicateur pousse à le garder court et percutant.",
@@ -50,21 +53,23 @@ const DEFIS = [
     })
   },
   {
-    emoji: "🧰",
-    titre: "Toolkit agentique du consultant",
-    probleme: "Chacun bricole ses propres agents dans son coin. Résultat : aucune harmonisation, et surtout aucun agent signature WeFiiT qui porte notre positionnement métier.",
-    build: "Assemblez la suite d'agents du consultant WeFiiT : définition d'OKR, cadrage de discovery, rédaction de user stories, automatisation de tests. Des agents partagés, reconnaissables, qui témoignent de notre expertise.",
+    emoji: "☕",
+    titre: "We.Café",
+    constat: "WeFiiT grandit sans grossir : 120 WeFiiTers aujourd'hui, avec plein d'occasions de rencontrer de nouvelles personnes qu'on ne saisit pas encore.",
+    probleme: "Comment créer, chaque semaine, une nouvelle rencontre entre deux WeFiiTers ?",
+    build: "Une app qui matche deux WeFiiTers qu'on n'aurait jamais croisés autrement, une autre Tribe, un autre client, un autre étage, pour partager un café.",
     fiche: Object.assign({}, FICHE_VIDE, {
-      utilisateurs: "Tous les consultants WeFiiT, au quotidien sur leurs missions, qui veulent des agents fiables et partagés plutôt que de bricoler les leurs dans leur coin.",
-      piste: "Une galerie d'agents partagés : chaque agent a sa fiche (rôle, quand l'utiliser) et un bouton pour copier son prompt.",
-      prompt: "On construit une galerie d'agents partagés pour les consultants WeFiiT (OKR, discovery, user stories, tests) : chaque agent a sa fiche — rôle, quand l'utiliser — et un bouton pour copier son prompt. Stack : Claude, GitHub, Supabase. Avant de coder, propose-moi un plan : la structure d'une fiche agent et les 3 fonctionnalités d'une V1 en 2h. J'utilise /plan, je valide, puis on code."
+      utilisateurs: "Tous les WeFiiTers, et particulièrement les nouveaux arrivants, qui veulent rencontrer des collègues et créer du lien au-delà des projets.",
+      piste: "Une app de matching : deux WeFiiTers sont mis en relation pour partager un café, selon leurs envies et leurs disponibilités.",
+      prompt: "On construit une app de matching We.Café : elle met en relation deux WeFiiTers pour partager un café, un thé ou un matcha, selon leurs envies et leurs disponibilités. Stack : Claude, GitHub, Supabase. Avant de coder, propose-moi un plan : le modèle de données (profil, dispo, match) et les 3 fonctionnalités d'une V1 en 2h. J'utilise /plan, je valide, puis on code."
     })
   },
   {
     emoji: "🎤",
-    titre: "Entraînement Soutenance",
-    probleme: "La soutenance reste un moment de stress pour les WeFiiTers, à chaque fois. Un seul remède : la préparation.",
-    build: "Un coach IA qui simule la soutenance avant le vrai jury. Il écoute votre pitch, joue le client sceptique, envoie les questions pièges et vous débriefe sur le fond, la posture et le storytelling. Le stress de l'oral, en mode répétable et sans témoin gênant.",
+    titre: "Coach Soutenances",
+    constat: "La préparation à une soutenance passe toujours par une session avec un PAD, un moment important de la vie d'un WeFiiTer.",
+    probleme: "Comment utiliser l'IA pour s'entraîner avant sa prépa soutenance avec un PAD ?",
+    build: "Un coach IA vocal, sans témoin, qui débriefe le fond et la forme du pitch, avant l'entraînement avec le PAD.",
     fiche: Object.assign({}, FICHE_VIDE, {
       utilisateurs: "Les WeFiiTers qui préparent une soutenance ou un pitch important, seuls et à leur rythme, pour répéter et gagner en assurance avant le vrai jury.",
       piste: "Une vraie discussion orale : on parle à voix haute, l'IA joue le jury, écoute le pitch et répond en direct.",
@@ -72,14 +77,15 @@ const DEFIS = [
     })
   },
   {
-    emoji: "☕",
-    titre: "We.Café",
-    probleme: "Plus on est nombreux chez WeFiiT, plus il devient difficile de vraiment se connaître. On travaille côte à côte sans jamais prendre le temps d'un vrai moment ensemble.",
-    build: "Une app qui matche deux WeFiiTers pour partager un café, un thé ou un matcha — un moment simple pour se découvrir, échanger et apprendre les uns des autres.",
+    emoji: "🏆",
+    titre: "Vitrine des Réalisations",
+    constat: "Chez WeFiiT, on produit de super livrables en mission, un hackathon chez LV il y a quelques jours, la présentation de Pauline sur les agents IA au Tech Data's, mais on n'en garde aucune mémoire collective.",
+    probleme: "Comment retrouver et s'inspirer de nos meilleurs livrables produits en mission ?",
+    build: "Une vitrine façon Product Hunt, où tous ces livrables prennent vie et s'inspirent les uns les autres.",
     fiche: Object.assign({}, FICHE_VIDE, {
-      utilisateurs: "Tous les WeFiiTers, et particulièrement les nouveaux arrivants, qui veulent rencontrer des collègues et créer du lien au-delà des projets.",
-      piste: "Une app de matching : deux WeFiiTers sont mis en relation pour partager un café, selon leurs envies et leurs disponibilités.",
-      prompt: "On construit une app de matching We.Café : elle met en relation deux WeFiiTers pour partager un café, un thé ou un matcha, selon leurs envies et leurs disponibilités. Stack : Claude, GitHub, Supabase. Avant de coder, propose-moi un plan : le modèle de données (profil, dispo, match) et les 3 fonctionnalités d'une V1 en 2h. J'utilise /plan, je valide, puis on code."
+      utilisateurs: "Les consultants qui veulent valoriser un livrable marquant, et les commerciaux ou managers qui cherchent des références concrètes pour un pitch client.",
+      piste: "L'app store des dernières MEP : une galerie où chaque mise en production récente s'affiche comme une app, avec sa vignette, ses tags et son impact.",
+      prompt: "On construit une galerie interne des réalisations WeFiiT, façon « app store des dernières MEP » : chaque livrable s'affiche en carte avec vignette, tags (compétence, secteur) et impact, consultable par tous. Stack : Claude, GitHub, Supabase. Avant de coder, propose-moi un plan : le modèle de données d'une carte et les 3 écrans essentiels d'une V1 en 2h. J'utilise /plan, je valide, puis on code."
     })
   }
 ];
