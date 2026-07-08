@@ -290,6 +290,20 @@
 
   /* Commandes du carrousel : flèches posées SUR le slideshow, à gauche et à droite */
   .ecran-zone { position: relative; }
+  /* Tabs de navigation rapide entre les défis, au-dessus de la carte */
+  .defis-tabs {
+    display: flex; gap: 10px; overflow-x: auto; margin-bottom: 18px;
+    padding-bottom: 4px; scrollbar-width: thin;
+  }
+  .defis-tab {
+    flex: none; cursor: pointer; white-space: nowrap;
+    background: rgba(0,40,130,0.06); border: 1px solid rgba(0,40,130,0.14);
+    color: var(--marine); font-family: 'Geomanist', sans-serif; font-size: 13.5px; font-weight: 600;
+    border-radius: 999px; padding: 9px 18px;
+    transition: background .2s, border-color .2s, color .2s;
+  }
+  .defis-tab:hover { border-color: rgba(249,143,3,0.5); }
+  .defis-tab.actif { background: var(--cta); border-color: transparent; color: #fff; }
   .fleche {
     position: absolute; top: 50%; transform: translateY(-50%); z-index: 5;
     width: 60px; height: 60px; border-radius: 50%; cursor: pointer;
@@ -388,6 +402,13 @@
   }
   .qr-boite img { display: block; width: clamp(160px, 26vw, 220px); height: auto; }
   .qr-legende { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--marine); }
+  .qr-url {
+    font-family: 'Publica Play', sans-serif; font-size: clamp(1rem, 2.4vw, 1.3rem);
+    color: var(--orange); text-decoration: none; letter-spacing: 0.01em;
+    border-bottom: 2px solid rgba(249,143,3,0.4); padding-bottom: 2px;
+    transition: border-color .2s;
+  }
+  .qr-url:hover { border-color: var(--orange); }
 
   /* ===== HOTLINE : carrousel automatique des 3 numéros d'urgence ===== */
   .hotline { text-align: center; }
@@ -491,6 +512,7 @@
     </div>
   </div>
   <div class="wrap-large">
+    <div class="defis-tabs" id="defis-tabs"></div>
     <div class="ecran-zone reveal">
       <div class="ecran" id="ecran"></div>
       <button class="fleche gauche" id="prec" aria-label="Défi précédent">←</button>
@@ -516,6 +538,7 @@
       <div class="qr-boite reveal">
         <img src="photos/qrcode.svg" alt="QR code vers la page du Product Builder Show" width="220" height="220">
         <div class="qr-legende">Scannez pour retrouver cette page</div>
+        <a class="qr-url" href="https://builder-show.wefiit.com/">builder-show.wefiit.com</a>
       </div>
     </div>
   </div>
@@ -648,6 +671,7 @@
   // ===== Carrousel des défis (une seule grande diapo à la fois) =====
   const ecran = document.getElementById("ecran");
   const points = document.getElementById("points");
+  const defisTabs = document.getElementById("defis-tabs");
   let indexDefi = 0;
 
   DEFIS.forEach(function (d, i) {
@@ -667,6 +691,13 @@
     bouton.setAttribute("aria-label", "Aller au défi " + (i + 1));
     bouton.addEventListener("click", function () { afficherDefi(i); });
     points.appendChild(bouton);
+
+    const tab = document.createElement("button");
+    tab.className = "defis-tab";
+    tab.type = "button";
+    tab.textContent = d.emoji + " " + d.titre;
+    tab.addEventListener("click", function () { afficherDefi(i); });
+    defisTabs.appendChild(tab);
   });
 
   document.getElementById("tot").textContent = String(DEFIS.length).padStart(2, "0");
@@ -675,6 +706,7 @@
     indexDefi = (i + DEFIS.length) % DEFIS.length;
     document.querySelectorAll(".diapo").forEach(function (el, j) { el.classList.toggle("active", j === indexDefi); });
     points.querySelectorAll(".point").forEach(function (el, j) { el.classList.toggle("actif", j === indexDefi); });
+    defisTabs.querySelectorAll(".defis-tab").forEach(function (el, j) { el.classList.toggle("actif", j === indexDefi); });
     document.getElementById("cur").textContent = String(indexDefi + 1).padStart(2, "0");
   }
   document.getElementById("prec").addEventListener("click", function () { afficherDefi(indexDefi - 1); });

@@ -23,7 +23,8 @@ const DEFIS = [
     probleme: "Comment aider chaque nouveau WeFiiTer à s'approprier tous les éléments de notre culture WeFiiT suite à son onboarding ?",
     build: "Un escape game où le nouvel arrivant avance d'énigme en énigme pour découvrir la culture, les outils et l'équipe WeFiiT.",
     fiche: Object.assign({}, FICHE_VIDE, {
-      utilisateurs: "Les nouveaux arrivants, pendant leurs premiers jours chez WeFiiT, et les managers ou RH qui les accueillent et veulent une intégration mémorable plutôt qu'une avalanche de slides.",
+      utilisateurs: "Les nouveaux arrivants, pendant leurs premiers jours chez WeFiiT et avant la validation de leur permis bateau avec Yamila, et les managers ou RH qui les accueillent et veulent une intégration mémorable plutôt qu'une avalanche de slides.",
+      ressources: "La matière première des énigmes existe déjà : le <a href=\"https://app.notion.com/p/wefiit/Mon-permis-Bateau-8690c47db6e64c8f90113bf4807e67e8?source=copy_link\" target=\"_blank\" rel=\"noopener\">Permis Bateau</a> (Notion), le référentiel que chaque nouvel arrivant doit valider, et la <a href=\"https://wefiitcom.sharepoint.com/sites/MyWeFiiT/SitePages/Onboarding.aspx\" target=\"_blank\" rel=\"noopener\">section Onboarding de My WeFiiT</a> (SharePoint).",
       piste: "Une chasse au trésor guidée : le nouvel arrivant avance d'énigme en énigme pour découvrir la culture, les outils et l'équipe WeFiiT.",
       prompt: "On construit un escape game digital pour l'onboarding des nouveaux chez WeFiiT : une chasse au trésor où l'arrivant résout des énigmes sur la culture, les outils et les valeurs de l'entreprise pour « déverrouiller » son accès à l'équipe. Stack : Claude, GitHub, Supabase. Avant de coder, propose-moi un plan : les 3 énigmes clés d'une V1 jouable en 2h et par quoi commencer. J'utilise /plan, je valide, puis on code étape par étape."
     })
@@ -35,7 +36,8 @@ const DEFIS = [
     probleme: "Comment s'entraîner sans complexes avant sa prépa soutenance avec un PAD ?",
     build: "Un coach IA vocal qui débriefe le fond et la forme du pitch, avant l'entraînement avec le PAD.",
     fiche: Object.assign({}, FICHE_VIDE, {
-      utilisateurs: "Les WeFiiTers qui préparent une soutenance ou un pitch important, seuls et à leur rythme, pour répéter et gagner en assurance avant le vrai jury.",
+      utilisateurs: "Les WeFiiTers qui préparent leur soutenance client — le pitch où le consultant se présente au client avant d'être staffé — seuls et à leur rythme, pour répéter et gagner en assurance avant la prépa avec le PAD.",
+      ressources: "La Mallette du Consultant contient déjà tout le référentiel du coach : le <a href=\"https://wefiitcom.sharepoint.com/sites/WeFiiT/Documents%20partages/Forms/AllItems.aspx?id=%2Fsites%2FWeFiiT%2FDocuments%20partages%2FG%C3%A9n%C3%A9ral%2F4%20%2D%20La%20Mallette%20du%20Consultant%2F3%20%2D%20Mes%20soutenances%20clients%2F%5BGUIDE%5D%20Prepa%20soutenance%2Epdf&parent=%2Fsites%2FWeFiiT%2FDocuments%20partages%2FG%C3%A9n%C3%A9ral%2F4%20%2D%20La%20Mallette%20du%20Consultant%2F3%20%2D%20Mes%20soutenances%20clients&p=true&ga=1\" target=\"_blank\" rel=\"noopener\">Guide Prépa Soutenance</a>, les <a href=\"https://wefiitcom.sharepoint.com/sites/WeFiiT/Documents%20partages/Forms/AllItems.aspx?id=%2Fsites%2FWeFiiT%2FDocuments%20partages%2FG%C3%A9n%C3%A9ral%2F4%20%2D%20La%20Mallette%20du%20Consultant%2F3%20%2D%20Mes%20soutenances%20clients%2FQuestionsTypeSoutenance%2Epdf&parent=%2Fsites%2FWeFiiT%2FDocuments%20partages%2FG%C3%A9n%C3%A9ral%2F4%20%2D%20La%20Mallette%20du%20Consultant%2F3%20%2D%20Mes%20soutenances%20clients&p=true&ga=1\" target=\"_blank\" rel=\"noopener\">Questions Types Soutenance</a> et le <a href=\"https://wefiitcom.sharepoint.com/:p:/s/WeFiiT/EVNaprni0o1Khkpw1qK2mF4BSq69BPxNBjrDm9HNEoil_g?e=GzZcF3\" target=\"_blank\" rel=\"noopener\">Guide Construire son Analyse Produit</a>.",
       piste: "Une vraie discussion orale : on parle à voix haute, l'IA joue le jury, écoute le pitch et répond en direct.",
       prompt: "On construit un coach IA d'entraînement à la soutenance : on lui parle à voix haute, il joue le client sceptique, envoie des questions pièges et débriefe sur le fond, la posture et le storytelling. Stack : Claude, GitHub, Supabase. Avant de coder, propose-moi un plan : le déroulé d'une session et les 3 fonctionnalités d'une V1 en 2h. J'utilise /plan, je valide, puis on code."
     })
@@ -44,12 +46,13 @@ const DEFIS = [
     emoji: "🏆",
     titre: "Vitrine des Réalisations",
     constat: "Chez WeFiiT, on produit de super livrables en mission, un hackathon chez LV il y a quelques jours, la présentation de Pauline sur les agents IA au Tech Data's, mais on n'en garde aucune mémoire collective.",
-    probleme: "Comment retrouver et s'inspirer de nos meilleurs livrables produits en mission ?",
-    build: "Une vitrine façon Product Hunt, où tous ces livrables prennent vie et s'inspirent les uns les autres.",
+    probleme: "Comment faire rayonner à l'extérieur ce qui brille à l'intérieur ?",
+    build: "Une vitrine façon Product Hunt, où tous ces livrables prennent vie et s'inspirent les uns les autres. À partir d'un highlight, on génère directement un post LinkedIn ou un article de blog.",
     fiche: Object.assign({}, FICHE_VIDE, {
-      utilisateurs: "Les consultants qui veulent valoriser un livrable marquant, et les commerciaux ou managers qui cherchent des références concrètes pour un pitch client.",
-      piste: "L'app store des dernières MEP : une galerie où chaque mise en production récente s'affiche comme une app, avec sa vignette, ses tags et son impact.",
-      prompt: "On construit une galerie interne des réalisations WeFiiT, façon « app store des dernières MEP » : chaque livrable s'affiche en carte avec vignette, tags (compétence, secteur) et impact, consultable par tous. Stack : Claude, GitHub, Supabase. Avant de coder, propose-moi un plan : le modèle de données d'une carte et les 3 écrans essentiels d'une V1 en 2h. J'utilise /plan, je valide, puis on code."
+      utilisateurs: "Les consultants qui veulent valoriser une réalisation marquante, et les commerciaux ou managers qui cherchent des références concrètes pour un pitch client. Cadre : on met en vitrine des réalisations anonymisées ou déjà publiques (hackathons, conférences, formations), jamais un livrable client brut.",
+      ressources: "De quoi remplir la vitrine et calibrer la génération de contenu : les <a href=\"https://wefiitcom.sharepoint.com/:f:/s/TribeExpertises/IgDNK407IgLFQ5VRD1j-Y9J9AaPeWynZBsYXG8LcUeblIvE?e=6f7O02\" target=\"_blank\" rel=\"noopener\">formations réalisées chez les clients</a>, les <a href=\"https://wefiitcom.sharepoint.com/:f:/s/TribeExpertises/IgCoAzuvU8p3TpV_iOEC4DSrAa2rJFVJ1K1dgRbNkAUgiNw?e=l2B6xI\" target=\"_blank\" rel=\"noopener\">conférences, séminaires et REX inspirationnels</a>, et les <a href=\"https://wefiitcom.sharepoint.com/sites/INTERNALCOMMUNICATION/Documents%20partages/Contr%C3%B4le%20QA%20Notori%C3%A9t%C3%A9/Guidelines%20Blog%20WeFiiT.pdf\" target=\"_blank\" rel=\"noopener\">Guidelines Blog WeFiiT</a> pour écrire au bon ton.",
+      piste: "L'app store des réalisations WeFiiT : chaque highlight s'affiche comme une app, avec sa vignette, ses tags et son impact — et un bouton génère le post LinkedIn ou l'article de blog qui le fait rayonner.",
+      prompt: "On construit une vitrine des réalisations WeFiiT, façon Product Hunt : chaque réalisation (hackathon, conférence, formation, livrable marquant) s'affiche en carte avec vignette, tags (compétence, secteur) et impact, et un bouton génère un brouillon de post LinkedIn ou d'article de blog à partir du highlight. Stack : Claude, GitHub, Supabase. Avant de coder, propose-moi un plan : le modèle de données d'une carte, les 3 écrans essentiels et la génération de post pour une V1 en 2h. J'utilise /plan, je valide, puis on code."
     })
   },
   {
@@ -59,21 +62,10 @@ const DEFIS = [
     probleme: "Comment équiper chaque WeFiiTer d'agents IA éprouvés sur le terrain, et harmoniser nos pratiques ?",
     build: "Des agents signature WeFiiT, reconnaissables, alignés sur nos standards de qualité Product Management.",
     fiche: Object.assign({}, FICHE_VIDE, {
-      utilisateurs: "Tous les consultants WeFiiT, au quotidien sur leurs missions, qui veulent des agents fiables et partagés plutôt que de bricoler les leurs dans leur coin.",
-      piste: "Une galerie d'agents partagés : chaque agent a sa fiche (rôle, quand l'utiliser) et un bouton pour copier son prompt.",
-      prompt: "On construit une galerie d'agents partagés pour les consultants WeFiiT (OKR, discovery, user stories, tests) : chaque agent a sa fiche (rôle, quand l'utiliser) et un bouton pour copier son prompt. Stack : Claude, GitHub, Supabase. Avant de coder, propose-moi un plan : la structure d'une fiche agent et les 3 fonctionnalités d'une V1 en 2h. J'utilise /plan, je valide, puis on code."
-    })
-  },
-  {
-    emoji: "🖼️",
-    titre: "Brief Augmenté",
-    constat: "Notre brief consultant sert à la fois notre montée en valeur et notre différenciation IA — mais aujourd'hui il fait 7 à 10 pages avec un template générique qui ne porte ni l'un ni l'autre.",
-    probleme: "Comment faire de notre brief un vrai levier de notre montée en valeur et de notre différenciation IA ?",
-    build: "Un template plus compact, intégrant nos compétences IA, avec des déclinaisons personnalisées par compétence.",
-    fiche: Object.assign({}, FICHE_VIDE, {
-      utilisateurs: "Les consultants qui préparent leur brief avant une mission ou un entretien client, et les PADs qui les présentent aux clients.",
-      piste: "Un générateur de brief avec score de lisibilité : l'IA rédige le brief et un indicateur pousse à le garder court et percutant.",
-      prompt: "On construit une plateforme pour créer le brief d'un consultant WeFiiT : l'IA aide à rédiger, met en avant l'impact et les compétences IA, avec un design épuré et un score de lisibilité qui pousse à rester court. Stack : Claude, GitHub, Supabase. Avant de coder, propose-moi un plan : les champs du brief et les 3 fonctionnalités d'une V1 en 2h. J'utilise /plan, je valide, puis on code."
+      utilisateurs: "Tous les consultants WeFiiT, au quotidien sur leurs missions, qui veulent des agents fiables et partagés plutôt que de bricoler les leurs dans leur coin. Le livrable attendu : les agents eux-mêmes, éprouvés et documentés — pas une plateforme.",
+      ressources: "De la matière première pour s'inspirer : le repo open source <a href=\"https://github.com/deanpeters/Product-Manager-Skills\" target=\"_blank\" rel=\"noopener\">Product Manager Skills</a> (une collection de skills IA pour PM, par Dean Peters), et le <a href=\"https://app.notion.com/p/wefiit/Le-Toolkit-du-consultant-d469abff78e4413f84777c4595645dd3?source=copy_link\" target=\"_blank\" rel=\"noopener\">Toolkit du consultant</a> dans Notion.",
+      piste: "Choisir un moment clé du métier PM (discovery, user stories, plan de test…) et builder l'agent signature WeFiiT qui le couvre : un prompt soigné, testé sur un cas réel de mission, avec sa fiche d'usage (rôle, quand l'utiliser, exemple d'entrée/sortie).",
+      prompt: "On construit un agent signature WeFiiT pour un moment clé du métier PM (au choix : discovery, user stories, plan de test…). Objectif : un agent éprouvé, avec son prompt système soigné, sa fiche d'usage (rôle, quand l'utiliser, exemple d'entrée/sortie) et un test sur un cas réel de mission. Stack : Claude, GitHub, Supabase. Avant de coder, propose-moi un plan : quel agent choisir, la structure de son prompt système et un scénario de test pour une V1 en 2h. J'utilise /plan, je valide, puis on code."
     })
   },
   {
@@ -84,6 +76,7 @@ const DEFIS = [
     build: "Une app qui matche deux WeFiiTers qu'on n'aurait jamais croisés autrement, une autre Tribe, un autre client, un autre étage, pour partager un café.",
     fiche: Object.assign({}, FICHE_VIDE, {
       utilisateurs: "Tous les WeFiiTers, et particulièrement les nouveaux arrivants, qui veulent rencontrer des collègues et créer du lien au-delà des projets.",
+      ressources: "Pour alimenter le matching : le <a href=\"https://wefiitcom-my.sharepoint.com/:x:/g/personal/yamila_dary_wefiit_com/IQAjQ79xtSjuTLHftdFjMG9TAeetqLxJPse0r32Z42H_D0c?e=sw2woO\" target=\"_blank\" rel=\"noopener\">fichier Excel avec la liste des WeFiiTers</a>.",
       piste: "Une app de matching : deux WeFiiTers sont mis en relation pour partager un café, selon leurs envies et leurs disponibilités.",
       prompt: "On construit une app de matching We.Café : elle met en relation deux WeFiiTers pour partager un café, un thé ou un matcha, selon leurs envies et leurs disponibilités. Stack : Claude, GitHub, Supabase. Avant de coder, propose-moi un plan : le modèle de données (profil, dispo, match) et les 3 fonctionnalités d'une V1 en 2h. J'utilise /plan, je valide, puis on code."
     })
