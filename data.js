@@ -32,8 +32,8 @@ const DEFIS = [
   {
     emoji: "🏆",
     titre: "Showroom WeFiiT",
-    constat: "Chez WeFiiT, on produit de super livrables en mission, un hackathon chez LV il y a quelques jours, la présentation de Pauline sur les agents IA au Tech Data's, mais on n'en garde aucune mémoire collective.",
-    probleme: "Comment faire rayonner à l'extérieur ce qui brille à l'intérieur ?",
+    constat: "Chez WeFiiT, on produit de super livrables en mission. Mais ils dorment dans leurs dossiers : peu partagés en interne, invisibles à l'extérieur.",
+    probleme: "Comment faire rayonner en interne et en externe nos plus beaux livrables de mission ?",
     build: "Une vitrine façon Product Hunt, où tous ces livrables prennent vie et s'inspirent les uns les autres. À partir d'un highlight, on génère directement un post LinkedIn ou un article de blog.",
     fiche: Object.assign({}, FICHE_VIDE, {
       utilisateurs: "Les consultants qui veulent valoriser une réalisation marquante, et les commerciaux ou managers qui cherchent des références concrètes pour un pitch client. Cadre : on met en vitrine des réalisations anonymisées ou déjà publiques (hackathons, conférences, formations), jamais un livrable client brut.",
