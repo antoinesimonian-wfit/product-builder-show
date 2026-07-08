@@ -84,6 +84,8 @@
   .hero {
     position: relative; text-align: center; padding: 64px 32px 80px; overflow: hidden;
     flex: 1; display: flex; align-items: center; justify-content: center;
+    /* Full height : tout l'écran moins la nav (55px), quelle que soit la longueur de la page */
+    min-height: calc(100svh - 55px);
     background:
       radial-gradient(ellipse 55% 70% at 30% -10%, rgba(0,66,255,0.4), transparent 60%),
       radial-gradient(ellipse 55% 70% at 70% -10%, rgba(249,143,3,0.22), transparent 60%),
@@ -329,7 +331,10 @@
     .fleche.gauche { left: 10px; }
     .fleche.droite { right: 10px; }
     .fleche:hover { transform: scale(1.08); }
-    .diapo { padding: 40px 24px 90px; min-height: calc(100svh - 64px); justify-content: center; }
+    .diapo { padding: 36px 24px 84px; }
+    .diapo .haut { margin-bottom: 24px; }
+    .diapo .constat { margin-bottom: 24px; }
+    .diapo .colonnes { gap: 22px; }
     .commandes { bottom: auto; top: calc(100% + 16px); position: static; margin-top: 16px; }
   }
   /* Pagination intégrée en bas de la carte, superposée à l'écran */
@@ -649,7 +654,8 @@
   <div class="fiche" id="fiche-contenu"></div>
 </div>
 
-<script src="data.js"></script>
+<!-- ?v= à incrémenter à chaque modification de data.js : force le navigateur à recharger (cache GitHub Pages = 10 min) -->
+<script src="data.js?v=2"></script>
 <script>
   // ===== Logo : retour en haut de la page en douceur =====
   document.querySelector("a.brand").addEventListener("click", function (e) {
