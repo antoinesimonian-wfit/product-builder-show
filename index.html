@@ -325,7 +325,9 @@
   @media (max-width: 640px) {
     /* Carrousel en pleine largeur (bord à bord), chaque carte occupe la hauteur de l'écran */
     .wrap-large { padding: 0; }
-    .defis-tabs { padding: 0 20px 4px; }
+    /* Tabs sans barre de défilement visible : on scrolle au doigt */
+    .defis-tabs { padding: 0 20px 4px; scrollbar-width: none; }
+    .defis-tabs::-webkit-scrollbar { display: none; }
     .ecran { border-radius: 0; border-left: none; border-right: none; min-height: 0; }
     .fleche { width: 40px; height: 40px; font-size: 17px; top: auto; bottom: 22px; transform: none; }
     .fleche.gauche { left: 10px; }
@@ -548,7 +550,19 @@
 
 <hr class="sep">
 
-<section id="demarrage" class="alt">
+<section id="toolbox" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Votre toolbox<span class="dot">.</span></h2>
+      <p>Vous partez équipés : tout est prêt, il n'y a plus qu'à builder.</p>
+    </div>
+    <div class="grid-3" id="toolbox-grille"></div>
+  </div>
+</section>
+
+<hr class="sep">
+
+<section id="demarrage">
   <div class="wrap demarrage">
     <div class="sec-head reveal">
       <h2>Top départ<span class="dot">.</span></h2>
@@ -567,7 +581,7 @@
 
 <hr class="sep">
 
-<section id="equipes">
+<section id="equipes" class="alt">
   <div class="wrap">
     <div class="sec-head reveal">
       <h2>Les équipes<span class="dot">.</span></h2>
@@ -589,7 +603,7 @@
 
 <hr class="sep">
 
-<section id="hotline" class="alt">
+<section id="hotline">
   <div class="wrap hotline">
     <div class="sec-head reveal">
       <h2>Une urgence, un blocage<span class="dot">.</span></h2>
@@ -602,7 +616,7 @@
 
 <hr class="sep">
 
-<section id="next">
+<section id="next" class="alt">
   <div class="wrap">
     <div class="sec-head reveal">
       <h2>What's next <span class="dot">?</span></h2>
@@ -655,7 +669,7 @@
 </div>
 
 <!-- ?v= à incrémenter à chaque modification de data.js : force le navigateur à recharger (cache GitHub Pages = 10 min) -->
-<script src="data.js?v=3"></script>
+<script src="data.js?v=4"></script>
 <script>
   // ===== Logo : retour en haut de la page en douceur =====
   document.querySelector("a.brand").addEventListener("click", function (e) {
@@ -684,6 +698,13 @@
   RAISONS.forEach(function (r) {
     grilleRaisons.insertAdjacentHTML("beforeend",
       '<div class="raison reveal"><h3>' + r.titre + '<span class="dot">.</span></h3><div class="ic">' + r.emoji + '</div><p>' + r.texte + '</p></div>');
+  });
+
+  // ===== Votre toolbox =====
+  const grilleToolbox = document.getElementById("toolbox-grille");
+  TOOLBOX.forEach(function (t) {
+    grilleToolbox.insertAdjacentHTML("beforeend",
+      '<div class="raison reveal"><h3>' + t.titre + '<span class="dot">.</span></h3><div class="ic">' + t.emoji + '</div><p>' + t.texte + '</p></div>');
   });
 
   // ===== Carrousel des défis (une seule grande diapo à la fois) =====
@@ -738,6 +759,21 @@
     if (e.key === "ArrowRight") { afficherDefi(indexDefi + 1); }
   });
   afficherDefi(0);
+
+  // ===== Swipe tactile sur le carrousel (mobile) =====
+  // On ne déclenche que si le geste est franchement horizontal, pour ne pas gêner le scroll vertical.
+  let toucheX = 0;
+  let toucheY = 0;
+  ecran.addEventListener("touchstart", function (e) {
+    toucheX = e.changedTouches[0].clientX;
+    toucheY = e.changedTouches[0].clientY;
+  }, { passive: true });
+  ecran.addEventListener("touchend", function (e) {
+    const deltaX = e.changedTouches[0].clientX - toucheX;
+    const deltaY = e.changedTouches[0].clientY - toucheY;
+    if (Math.abs(deltaX) < 50 || Math.abs(deltaX) < Math.abs(deltaY) * 1.5) { return; }
+    afficherDefi(deltaX < 0 ? indexDefi + 1 : indexDefi - 1);
+  }, { passive: true });
 
   // ===== Modal fiche complète du défi =====
   const modal = document.getElementById("modal");
