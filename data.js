@@ -119,7 +119,7 @@ const RAISONS = [
 
 /* La toolbox : ce avec quoi chaque équipe part au top départ. */
 const TOOLBOX = [
-  { emoji: "🔑", titre: "Un compte Claude par équipe", texte: "Chaque capitaine d'équipe a reçu un accès SSO à un compte Claude dans notre organisation WeFiiT. Et chaque équipe aura son propre écran pour vibe coder ensemble." },
+  { emoji: "🔑", titre: "Un compte Claude par équipe", texte: "Chaque capitaine d'équipe a un accès SSO à un compte Claude. Et chaque équipe aura son propre écran pour vibe coder ensemble." },
   { emoji: "🎨", titre: "Le Design System WeFiiT", texte: "Couleurs, typos, composants : votre app aura les couleurs de WeFiiT dès la première itération." },
   { emoji: "📦", titre: "Des inputs sur étagère", texte: "Pour chaque défi, des accélérateurs et des inputs, à retrouver dans chaque fiche projet." }
 ];
