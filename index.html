@@ -227,6 +227,11 @@
   .lab.bd { color: var(--orange); }
   .diapo .colonnes p { font-size: clamp(1.05rem, 1.6vw, 1.3rem); font-weight: 450; line-height: 1.6; color: #d9e0fb; }
   .diapo .fleche-ap { color: var(--orange); font-weight: 700; margin-left: 8px; }
+  /* Petite mention discrète des inputs, sous le build */
+  .inputs-mention { margin-top: 12px; font-size: 13.5px; line-height: 1.5; color: #8892b8; }
+  .inputs-mention .inputs-lab { text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; font-weight: 600; }
+  .inputs-mention a { color: #aab6e0; text-decoration: underline; text-underline-offset: 2px; }
+  .inputs-mention a:hover { color: #fff; }
 
   /* CTA vers la fiche complète du défi : pilule en dégradé orange */
   .fiche-lien {
@@ -669,7 +674,7 @@
 </div>
 
 <!-- ?v= à incrémenter à chaque modification de data.js : force le navigateur à recharger (cache GitHub Pages = 10 min) -->
-<script src="data.js?v=20"></script>
+<script src="data.js?v=21"></script>
 <script>
   // ===== Logo : retour en haut de la page en douceur =====
   document.querySelector("a.brand").addEventListener("click", function (e) {
@@ -713,6 +718,20 @@
   const defisTabs = document.getElementById("defis-tabs");
   let indexDefi = 0;
 
+  // Petite mention "Inputs" sous le build : on réutilise les liens de la fiche (ressources),
+  // pour ne pas dupliquer les URLs dans data.js.
+  function mentionInputs(d) {
+    if (typeof d.fiche.ressources !== "string" || d.fiche.ressources.indexOf("[à compléter") === 0) { return ""; }
+    const bac = document.createElement("div");
+    bac.innerHTML = d.fiche.ressources;
+    const liens = Array.prototype.slice.call(bac.querySelectorAll("a"));
+    if (liens.length === 0) { return ""; }
+    const items = liens.map(function (a) {
+      return '<a href="' + a.getAttribute("href") + '" target="_blank" rel="noopener">' + a.textContent + '</a>';
+    });
+    return '<p class="inputs-mention"><span class="inputs-lab">Inputs :</span> ' + items.join(" · ") + '</p>';
+  }
+
   DEFIS.forEach(function (d, i) {
     const num = String(i + 1).padStart(2, "0");
     ecran.insertAdjacentHTML("beforeend",
@@ -721,7 +740,7 @@
         '<p class="constat">' + d.constat + '</p>' +
         '<div class="colonnes">' +
           '<div class="avant"><div class="lab pb">Problème</div><p>' + d.probleme + ' <span class="fleche-ap" aria-hidden="true">→</span></p></div>' +
-          '<div class="build-bloc"><div class="lab bd">On build</div><p>' + d.build + '</p></div>' +
+          '<div class="build-bloc"><div class="lab bd">On build</div><p>' + d.build + '</p>' + mentionInputs(d) + '</div>' +
         '</div>' +
         '<button class="fiche-lien" data-defi="' + i + '">Voir la fiche complète du défi <span aria-hidden="true">→</span></button>' +
       '</div>');
