@@ -45,9 +45,9 @@ const DEFIS = [
   {
     emoji: "🎤",
     titre: "Coach Soutenances",
-    constat: "La soutenance est le moment de vérité d'une mission : le pitch doit convaincre, et bien s'y préparer demande du temps et plusieurs répétitions.",
+    constat: "La préparation soutenance, c'est l'un des rituels les plus sacrés et les plus appréciés chez WeFiiT. On ne va pas y toucher.",
     probleme: "Comment s'entraîner sans complexes avant sa prépa soutenance avec un PAD ?",
-    build: "Un coach IA vocal qui débriefe le fond et la forme du pitch, avant l'entraînement avec le PAD.",
+    build: "Un coach IA vocal qui débriefe le fond et la forme du pitch, avant sa préparation soutenance.",
     fiche: Object.assign({}, FICHE_VIDE, {
       utilisateurs: "Les WeFiiTers qui préparent leur soutenance client — le pitch où le consultant se présente au client avant d'être staffé — seuls et à leur rythme, pour répéter et gagner en assurance avant la prépa avec le PAD.",
       ressources: "La Mallette du Consultant contient déjà tout le référentiel du coach : le <a href=\"https://wefiitcom.sharepoint.com/sites/WeFiiT/Documents%20partages/Forms/AllItems.aspx?id=%2Fsites%2FWeFiiT%2FDocuments%20partages%2FG%C3%A9n%C3%A9ral%2F4%20%2D%20La%20Mallette%20du%20Consultant%2F3%20%2D%20Mes%20soutenances%20clients%2F%5BGUIDE%5D%20Prepa%20soutenance%2Epdf&parent=%2Fsites%2FWeFiiT%2FDocuments%20partages%2FG%C3%A9n%C3%A9ral%2F4%20%2D%20La%20Mallette%20du%20Consultant%2F3%20%2D%20Mes%20soutenances%20clients&p=true&ga=1\" target=\"_blank\" rel=\"noopener\">Guide Prépa Soutenance</a>, les <a href=\"https://wefiitcom.sharepoint.com/sites/WeFiiT/Documents%20partages/Forms/AllItems.aspx?id=%2Fsites%2FWeFiiT%2FDocuments%20partages%2FG%C3%A9n%C3%A9ral%2F4%20%2D%20La%20Mallette%20du%20Consultant%2F3%20%2D%20Mes%20soutenances%20clients%2FQuestionsTypeSoutenance%2Epdf&parent=%2Fsites%2FWeFiiT%2FDocuments%20partages%2FG%C3%A9n%C3%A9ral%2F4%20%2D%20La%20Mallette%20du%20Consultant%2F3%20%2D%20Mes%20soutenances%20clients&p=true&ga=1\" target=\"_blank\" rel=\"noopener\">Questions Types Soutenance</a> et le <a href=\"https://wefiitcom.sharepoint.com/:p:/s/WeFiiT/EVNaprni0o1Khkpw1qK2mF4BSq69BPxNBjrDm9HNEoil_g?e=GzZcF3\" target=\"_blank\" rel=\"noopener\">Guide Construire son Analyse Produit</a>.",
