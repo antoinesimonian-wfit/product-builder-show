@@ -30,6 +30,19 @@ const DEFIS = [
     })
   },
   {
+    emoji: "🏆",
+    titre: "Showroom WeFiiT",
+    constat: "Chez WeFiiT, on produit de super livrables en mission, un hackathon chez LV il y a quelques jours, la présentation de Pauline sur les agents IA au Tech Data's, mais on n'en garde aucune mémoire collective.",
+    probleme: "Comment faire rayonner à l'extérieur ce qui brille à l'intérieur ?",
+    build: "Une vitrine façon Product Hunt, où tous ces livrables prennent vie et s'inspirent les uns les autres. À partir d'un highlight, on génère directement un post LinkedIn ou un article de blog.",
+    fiche: Object.assign({}, FICHE_VIDE, {
+      utilisateurs: "Les consultants qui veulent valoriser une réalisation marquante, et les commerciaux ou managers qui cherchent des références concrètes pour un pitch client. Cadre : on met en vitrine des réalisations anonymisées ou déjà publiques (hackathons, conférences, formations), jamais un livrable client brut.",
+      ressources: "De quoi remplir la vitrine et calibrer la génération de contenu : les <a href=\"https://wefiitcom.sharepoint.com/:f:/s/TribeExpertises/IgDNK407IgLFQ5VRD1j-Y9J9AaPeWynZBsYXG8LcUeblIvE?e=6f7O02\" target=\"_blank\" rel=\"noopener\">formations réalisées chez les clients</a>, les <a href=\"https://wefiitcom.sharepoint.com/:f:/s/TribeExpertises/IgCoAzuvU8p3TpV_iOEC4DSrAa2rJFVJ1K1dgRbNkAUgiNw?e=l2B6xI\" target=\"_blank\" rel=\"noopener\">conférences, séminaires et REX inspirationnels</a>, et les <a href=\"https://wefiitcom.sharepoint.com/sites/INTERNALCOMMUNICATION/Documents%20partages/Contr%C3%B4le%20QA%20Notori%C3%A9t%C3%A9/Guidelines%20Blog%20WeFiiT.pdf\" target=\"_blank\" rel=\"noopener\">Guidelines Blog WeFiiT</a> pour écrire au bon ton.",
+      piste: "L'app store des réalisations WeFiiT : chaque highlight s'affiche comme une app, avec sa vignette, ses tags et son impact — et un bouton génère le post LinkedIn ou l'article de blog qui le fait rayonner.",
+      prompt: "On construit une vitrine des réalisations WeFiiT, façon Product Hunt : chaque réalisation (hackathon, conférence, formation, livrable marquant) s'affiche en carte avec vignette, tags (compétence, secteur) et impact, et un bouton génère un brouillon de post LinkedIn ou d'article de blog à partir du highlight. Stack : Claude, GitHub, Supabase. Avant de coder, propose-moi un plan : le modèle de données d'une carte, les 3 écrans essentiels et la génération de post pour une V1 en 2h. J'utilise /plan, je valide, puis on code."
+    })
+  },
+  {
     emoji: "🎤",
     titre: "Coach Soutenances",
     constat: "La soutenance est le moment de vérité d'une mission : le pitch doit convaincre, et bien s'y préparer demande du temps et plusieurs répétitions.",
@@ -43,16 +56,16 @@ const DEFIS = [
     })
   },
   {
-    emoji: "🏆",
-    titre: "Vitrine des Réalisations",
-    constat: "Chez WeFiiT, on produit de super livrables en mission, un hackathon chez LV il y a quelques jours, la présentation de Pauline sur les agents IA au Tech Data's, mais on n'en garde aucune mémoire collective.",
-    probleme: "Comment faire rayonner à l'extérieur ce qui brille à l'intérieur ?",
-    build: "Une vitrine façon Product Hunt, où tous ces livrables prennent vie et s'inspirent les uns les autres. À partir d'un highlight, on génère directement un post LinkedIn ou un article de blog.",
+    emoji: "☕",
+    titre: "We.Café",
+    constat: "WeFiiT grandit sans grossir : 120 WeFiiTers aujourd'hui, avec plein d'occasions de rencontrer de nouvelles personnes qu'on ne saisit pas encore.",
+    probleme: "Comment provoquer, chaque semaine, une rencontre qu'on n'aurait jamais eue autrement : un autre client, une autre promotion, une autre Tribe ?",
+    build: "Une app qui matche deux WeFiiTers qu'on n'aurait jamais croisés autrement, une autre Tribe, un autre client, un autre étage, pour partager un café.",
     fiche: Object.assign({}, FICHE_VIDE, {
-      utilisateurs: "Les consultants qui veulent valoriser une réalisation marquante, et les commerciaux ou managers qui cherchent des références concrètes pour un pitch client. Cadre : on met en vitrine des réalisations anonymisées ou déjà publiques (hackathons, conférences, formations), jamais un livrable client brut.",
-      ressources: "De quoi remplir la vitrine et calibrer la génération de contenu : les <a href=\"https://wefiitcom.sharepoint.com/:f:/s/TribeExpertises/IgDNK407IgLFQ5VRD1j-Y9J9AaPeWynZBsYXG8LcUeblIvE?e=6f7O02\" target=\"_blank\" rel=\"noopener\">formations réalisées chez les clients</a>, les <a href=\"https://wefiitcom.sharepoint.com/:f:/s/TribeExpertises/IgCoAzuvU8p3TpV_iOEC4DSrAa2rJFVJ1K1dgRbNkAUgiNw?e=l2B6xI\" target=\"_blank\" rel=\"noopener\">conférences, séminaires et REX inspirationnels</a>, et les <a href=\"https://wefiitcom.sharepoint.com/sites/INTERNALCOMMUNICATION/Documents%20partages/Contr%C3%B4le%20QA%20Notori%C3%A9t%C3%A9/Guidelines%20Blog%20WeFiiT.pdf\" target=\"_blank\" rel=\"noopener\">Guidelines Blog WeFiiT</a> pour écrire au bon ton.",
-      piste: "L'app store des réalisations WeFiiT : chaque highlight s'affiche comme une app, avec sa vignette, ses tags et son impact — et un bouton génère le post LinkedIn ou l'article de blog qui le fait rayonner.",
-      prompt: "On construit une vitrine des réalisations WeFiiT, façon Product Hunt : chaque réalisation (hackathon, conférence, formation, livrable marquant) s'affiche en carte avec vignette, tags (compétence, secteur) et impact, et un bouton génère un brouillon de post LinkedIn ou d'article de blog à partir du highlight. Stack : Claude, GitHub, Supabase. Avant de coder, propose-moi un plan : le modèle de données d'une carte, les 3 écrans essentiels et la génération de post pour une V1 en 2h. J'utilise /plan, je valide, puis on code."
+      utilisateurs: "Tous les WeFiiTers, et particulièrement les nouveaux arrivants, qui veulent rencontrer des collègues et créer du lien au-delà des projets.",
+      ressources: "Pour alimenter le matching : le <a href=\"https://wefiitcom-my.sharepoint.com/:x:/g/personal/yamila_dary_wefiit_com/IQAjQ79xtSjuTLHftdFjMG9TAeetqLxJPse0r32Z42H_D0c?e=sw2woO\" target=\"_blank\" rel=\"noopener\">fichier Excel avec la liste des WeFiiTers</a>.",
+      piste: "Une app de matching : deux WeFiiTers sont mis en relation pour partager un café, selon leurs envies et leurs disponibilités.",
+      prompt: "On construit une app de matching We.Café : elle met en relation deux WeFiiTers pour partager un café, un thé ou un matcha, selon leurs envies et leurs disponibilités. Stack : Claude, GitHub, Supabase. Avant de coder, propose-moi un plan : le modèle de données (profil, dispo, match) et les 3 fonctionnalités d'une V1 en 2h. J'utilise /plan, je valide, puis on code."
     })
   },
   {
@@ -66,19 +79,6 @@ const DEFIS = [
       ressources: "De la matière première pour s'inspirer : le repo open source <a href=\"https://github.com/deanpeters/Product-Manager-Skills\" target=\"_blank\" rel=\"noopener\">Product Manager Skills</a> (une collection de skills IA pour PM, par Dean Peters), et le <a href=\"https://app.notion.com/p/wefiit/Le-Toolkit-du-consultant-d469abff78e4413f84777c4595645dd3?source=copy_link\" target=\"_blank\" rel=\"noopener\">Toolkit du consultant</a> dans Notion.",
       piste: "Choisir un moment clé du métier PM (discovery, user stories, plan de test…) et builder l'agent signature WeFiiT qui le couvre : un prompt soigné, testé sur un cas réel de mission, avec sa fiche d'usage (rôle, quand l'utiliser, exemple d'entrée/sortie).",
       prompt: "On construit un agent signature WeFiiT pour un moment clé du métier PM (au choix : discovery, user stories, plan de test…). Objectif : un agent éprouvé, avec son prompt système soigné, sa fiche d'usage (rôle, quand l'utiliser, exemple d'entrée/sortie) et un test sur un cas réel de mission. Stack : Claude, GitHub, Supabase. Avant de coder, propose-moi un plan : quel agent choisir, la structure de son prompt système et un scénario de test pour une V1 en 2h. J'utilise /plan, je valide, puis on code."
-    })
-  },
-  {
-    emoji: "☕",
-    titre: "We.Café",
-    constat: "WeFiiT grandit sans grossir : 120 WeFiiTers aujourd'hui, avec plein d'occasions de rencontrer de nouvelles personnes qu'on ne saisit pas encore.",
-    probleme: "Comment provoquer, chaque semaine, une rencontre qu'on n'aurait jamais eue autrement : un autre client, une autre promotion, une autre Tribe ?",
-    build: "Une app qui matche deux WeFiiTers qu'on n'aurait jamais croisés autrement, une autre Tribe, un autre client, un autre étage, pour partager un café.",
-    fiche: Object.assign({}, FICHE_VIDE, {
-      utilisateurs: "Tous les WeFiiTers, et particulièrement les nouveaux arrivants, qui veulent rencontrer des collègues et créer du lien au-delà des projets.",
-      ressources: "Pour alimenter le matching : le <a href=\"https://wefiitcom-my.sharepoint.com/:x:/g/personal/yamila_dary_wefiit_com/IQAjQ79xtSjuTLHftdFjMG9TAeetqLxJPse0r32Z42H_D0c?e=sw2woO\" target=\"_blank\" rel=\"noopener\">fichier Excel avec la liste des WeFiiTers</a>.",
-      piste: "Une app de matching : deux WeFiiTers sont mis en relation pour partager un café, selon leurs envies et leurs disponibilités.",
-      prompt: "On construit une app de matching We.Café : elle met en relation deux WeFiiTers pour partager un café, un thé ou un matcha, selon leurs envies et leurs disponibilités. Stack : Claude, GitHub, Supabase. Avant de coder, propose-moi un plan : le modèle de données (profil, dispo, match) et les 3 fonctionnalités d'une V1 en 2h. J'utilise /plan, je valide, puis on code."
     })
   }
 ];
