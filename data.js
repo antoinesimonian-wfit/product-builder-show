@@ -21,7 +21,7 @@ const DEFIS = [
     titre: "Escape Game Onboarding",
     constat: "L'onboarding est un moment charnière dans la vie de tout WeFiiTer, qui se conclut par le passage du permis bateau. Mais c'est aussi une avalanche d'informations à digérer d'un coup.",
     probleme: "Comment aider chaque nouveau WeFiiTer à s'approprier facilement les principaux éléments de notre culture dans ses premières semaines ?",
-    build: "Un escape game pour réviser son permis bateau où chaque nouvel arrivant avance d'énigme en énigme pour découvrir la culture, les outils et l'équipe WeFiiT.",
+    build: "Un escape game où chaque nouvel arrivant avance d'énigme en énigme pour découvrir la culture, les outils et l'équipe WeFiiT.",
     fiche: Object.assign({}, FICHE_VIDE, {
       utilisateurs: "Les nouveaux arrivants, pendant leurs premiers jours chez WeFiiT et avant la validation de leur permis bateau avec Yamila, et les managers ou RH qui les accueillent et veulent une intégration mémorable plutôt qu'une avalanche de slides.",
       ressources: "La matière première des énigmes existe déjà : <a href=\"https://app.notion.com/p/wefiit/Ton-parcours-d-int-gration-26fe1ca090a9808aacc1dbf03e9d98f7\" target=\"_blank\" rel=\"noopener\">Ton parcours d'intégration</a> (Notion) et la <a href=\"https://wefiitcom.sharepoint.com/sites/MyWeFiiT/SitePages/Onboarding.aspx\" target=\"_blank\" rel=\"noopener\">section Onboarding de My WeFiiT</a> (SharePoint).",
