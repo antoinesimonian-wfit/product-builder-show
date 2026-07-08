@@ -59,7 +59,7 @@ const DEFIS = [
     emoji: "☕",
     titre: "We.Café",
     constat: "WeFiiT grandit sans grossir : 120 WeFiiTers aujourd'hui, avec plein d'occasions de rencontrer de nouvelles personnes qu'on ne saisit pas encore.",
-    probleme: "Comment provoquer, chaque semaine, une rencontre qu'on n'aurait jamais eue autrement : un autre client, une autre promotion, une autre Tribe ?",
+    probleme: "Comment provoquer, chaque semaine, une rencontre qu'on n'aurait jamais eue autrement ?",
     build: "Une app qui matche deux WeFiiTers qu'on n'aurait jamais croisés autrement, une autre Tribe, un autre client, un autre étage, pour partager un café.",
     fiche: Object.assign({}, FICHE_VIDE, {
       utilisateurs: "Tous les WeFiiTers, et particulièrement les nouveaux arrivants, qui veulent rencontrer des collègues et créer du lien au-delà des projets.",
