@@ -121,7 +121,7 @@ const RAISONS = [
 const TOOLBOX = [
   { emoji: "🔑", titre: "Un compte Claude par équipe", texte: "Chaque capitaine d'équipe a un accès SSO à un compte Claude. Et chaque équipe aura son propre écran pour vibe coder ensemble." },
   { emoji: "🎨", titre: "Le Design System WeFiiT", texte: "Couleurs, typos, composants : votre app aura les couleurs de WeFiiT dès la première itération." },
-  { emoji: "📦", titre: "Des inputs et des connecteurs sur étagère", texte: "Pour chaque défi, des accélérateurs et des inputs, à retrouver dans chaque fiche projet. Et les connecteurs SharePoint et Notion, déjà branchés dans Claude, pour y puiser directement." }
+  { emoji: "📦", titre: "Des inputs et des connecteurs sur étagère", texte: "Des accélérateurs pour chaque projet et des connecteurs SharePoint et Notion, déjà branchés dans Claude." }
 ];
 
 const OUTILS = [
