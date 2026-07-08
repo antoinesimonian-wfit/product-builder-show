@@ -19,7 +19,7 @@ const DEFIS = [
   {
     emoji: "🎲",
     titre: "Escape Game Onboarding",
-    constat: "L'onboarding est un jour charnière dans la vie de tout consultant chez WeFiiT, mais aussi une avalanche d'informations à digérer d'un coup.",
+    constat: "L'onboarding est un moment charnière dans la vie de tout WeFiiTer, qui se conclut par le passage du permis bateau. Mais c'est aussi une avalanche d'informations à digérer d'un coup.",
     probleme: "Comment aider chaque nouveau WeFiiTer à s'approprier toutes les dimensions de notre culture dans ses premières semaines ?",
     build: "Un escape game pour réviser son permis bateau où chaque nouvel arrivant avance d'énigme en énigme pour découvrir la culture, les outils et l'équipe WeFiiT.",
     fiche: Object.assign({}, FICHE_VIDE, {
