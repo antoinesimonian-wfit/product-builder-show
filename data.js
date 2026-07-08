@@ -56,19 +56,6 @@ const DEFIS = [
     })
   },
   {
-    emoji: "☕",
-    titre: "We.Café",
-    constat: "WeFiiT grandit sans grossir : 120 WeFiiTers aujourd'hui, avec plein d'occasions de rencontrer de nouvelles personnes qu'on ne saisit pas encore.",
-    probleme: "Comment provoquer, chaque semaine, une rencontre qu'on n'aurait jamais eue autrement ?",
-    build: "Une app qui matche deux WeFiiTers qu'on n'aurait jamais croisés autrement, une autre Tribe, un autre client, un autre étage, pour partager un café.",
-    fiche: Object.assign({}, FICHE_VIDE, {
-      utilisateurs: "Tous les WeFiiTers, et particulièrement les nouveaux arrivants, qui veulent rencontrer des collègues et créer du lien au-delà des projets.",
-      ressources: "Pour alimenter le matching : le <a href=\"https://wefiitcom-my.sharepoint.com/:x:/g/personal/yamila_dary_wefiit_com/IQAjQ79xtSjuTLHftdFjMG9TAeetqLxJPse0r32Z42H_D0c?e=sw2woO\" target=\"_blank\" rel=\"noopener\">fichier Excel avec la liste des WeFiiTers</a>.",
-      piste: "Une app de matching : deux WeFiiTers sont mis en relation pour partager un café, selon leurs envies et leurs disponibilités.",
-      prompt: "On construit une app de matching We.Café : elle met en relation deux WeFiiTers pour partager un café, un thé ou un matcha, selon leurs envies et leurs disponibilités. Stack : Claude, GitHub, Supabase. Avant de coder, propose-moi un plan : le modèle de données (profil, dispo, match) et les 3 fonctionnalités d'une V1 en 2h. J'utilise /plan, je valide, puis on code."
-    })
-  },
-  {
     emoji: "🧰",
     titre: "Toolkit Agentique",
     constat: "En mission, chaque WeFiiTer brille déjà avec ses propres agents IA : Discovery, Test Utilisateur, User Stories, Tests Automatisés… Mais chacun dans son coin, sans mise en commun ni émulation collective.",
@@ -79,6 +66,19 @@ const DEFIS = [
       ressources: "De la matière première pour s'inspirer : le repo open source <a href=\"https://github.com/deanpeters/Product-Manager-Skills\" target=\"_blank\" rel=\"noopener\">Product Manager Skills</a> (une collection de skills IA pour PM, par Dean Peters), et le <a href=\"https://app.notion.com/p/wefiit/Le-Toolkit-du-consultant-d469abff78e4413f84777c4595645dd3?source=copy_link\" target=\"_blank\" rel=\"noopener\">Toolkit du consultant</a> dans Notion.",
       piste: "Choisir un moment clé du métier PM (discovery, user stories, plan de test…) et builder l'agent signature WeFiiT qui le couvre : un prompt soigné, testé sur un cas réel de mission, avec sa fiche d'usage (rôle, quand l'utiliser, exemple d'entrée/sortie).",
       prompt: "On construit un agent signature WeFiiT pour un moment clé du métier PM (au choix : discovery, user stories, plan de test…). Objectif : un agent éprouvé, avec son prompt système soigné, sa fiche d'usage (rôle, quand l'utiliser, exemple d'entrée/sortie) et un test sur un cas réel de mission. Stack : Claude, GitHub, Supabase. Avant de coder, propose-moi un plan : quel agent choisir, la structure de son prompt système et un scénario de test pour une V1 en 2h. J'utilise /plan, je valide, puis on code."
+    })
+  },
+  {
+    emoji: "☕",
+    titre: "We.Café",
+    constat: "WeFiiT grandit sans grossir : 120 WeFiiTers aujourd'hui, avec plein d'occasions de rencontrer de nouvelles personnes qu'on ne saisit pas encore.",
+    probleme: "Comment provoquer, chaque semaine, une rencontre qu'on n'aurait jamais eue autrement ?",
+    build: "Une app qui matche deux WeFiiTers qu'on n'aurait jamais croisés autrement, une autre Tribe, un autre client, un autre étage, pour partager un café.",
+    fiche: Object.assign({}, FICHE_VIDE, {
+      utilisateurs: "Tous les WeFiiTers, et particulièrement les nouveaux arrivants, qui veulent rencontrer des collègues et créer du lien au-delà des projets.",
+      ressources: "Pour alimenter le matching : le <a href=\"https://wefiitcom-my.sharepoint.com/:x:/g/personal/yamila_dary_wefiit_com/IQAjQ79xtSjuTLHftdFjMG9TAeetqLxJPse0r32Z42H_D0c?e=sw2woO\" target=\"_blank\" rel=\"noopener\">fichier Excel avec la liste des WeFiiTers</a>.",
+      piste: "Une app de matching : deux WeFiiTers sont mis en relation pour partager un café, selon leurs envies et leurs disponibilités.",
+      prompt: "On construit une app de matching We.Café : elle met en relation deux WeFiiTers pour partager un café, un thé ou un matcha, selon leurs envies et leurs disponibilités. Stack : Claude, GitHub, Supabase. Avant de coder, propose-moi un plan : le modèle de données (profil, dispo, match) et les 3 fonctionnalités d'une V1 en 2h. J'utilise /plan, je valide, puis on code."
     })
   }
 ];
