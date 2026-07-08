@@ -45,7 +45,7 @@ const DEFIS = [
   {
     emoji: "🎤",
     titre: "Coach Soutenances",
-    constat: "La préparation soutenance, c'est l'un des rituels les plus sacrés et les plus appréciés chez WeFiiT. On ne va pas y toucher.",
+    constat: "La préparation soutenance, c'est l'un des rituels les plus sacrés et les plus appréciés chez WeFiiT.",
     probleme: "Comment s'entraîner sans complexes avant sa prépa soutenance avec un PAD ?",
     build: "Un coach IA vocal qui débriefe le fond et la forme du pitch, avant sa préparation soutenance.",
     fiche: Object.assign({}, FICHE_VIDE, {
