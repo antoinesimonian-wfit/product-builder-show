@@ -1023,9 +1023,9 @@
   }, { threshold: 0.1 });
   document.querySelectorAll(".reveal").forEach(function (el) { io.observe(el); });
 
-  // ===== Compte à rebours jusqu'au jeudi 9 juillet 2026 à 17h50 (heure de Paris) =====
+  // ===== Compte à rebours jusqu'au jeudi 9 juillet 2026 à 18h00 (heure de Paris) =====
   const chrono = document.getElementById("chrono");
-  const CIBLE = new Date("2026-07-09T17:50:00+02:00").getTime();
+  const CIBLE = new Date("2026-07-09T18:00:00+02:00").getTime();
 
   function tickChrono() {
     const restant = Math.floor((CIBLE - Date.now()) / 1000);
