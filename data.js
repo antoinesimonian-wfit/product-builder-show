@@ -18,7 +18,7 @@ const FICHE_VIDE = {
 const DEFIS = [
   {
     emoji: "🎲",
-    titre: "Escape Game Onboarding",
+    titre: "Onboarding Escape Game",
     constat: "L'onboarding est un moment charnière dans la vie de tout WeFiiTer, qui se conclut par le passage du permis bateau. Mais c'est aussi une avalanche d'informations à digérer d'un coup.",
     probleme: "Comment aider chaque nouveau WeFiiTer à s'approprier facilement les principaux éléments de notre culture dans ses premières semaines ?",
     build: "Un escape game où chaque nouvel arrivant avance d'énigme en énigme pour découvrir la culture, les outils et l'équipe WeFiiT.",
@@ -32,9 +32,9 @@ const DEFIS = [
   {
     emoji: "🏆",
     titre: "Showroom WeFiiT",
-    constat: "Chez WeFiiT, on produit de super livrables en mission. Mais ils dorment dans leurs dossiers : peu partagés en interne, invisibles à l'extérieur.",
+    constat: "Chez WeFiiT, on produit de super livrables en mission : la présentation de Pauline chez Roole, la formation IA de Nils chez BPI, le hackathon de Baptiste chez LV… Mais tout ça dort dans des dossiers.",
     probleme: "Comment faire rayonner en interne et en externe nos plus beaux livrables de mission ?",
-    build: "Une vitrine où tous ces livrables prennent vie et s'inspirent les uns les autres. À partir d'un livrable, on génère directement un post LinkedIn ou un article de blog.",
+    build: "Une vitrine où tous ces livrables prennent vie et s'inspirent les uns les autres. Bonus : à partir d'un livrable, on génère directement un post LinkedIn ou un article de blog.",
     fiche: Object.assign({}, FICHE_VIDE, {
       utilisateurs: "Les consultants qui veulent valoriser une réalisation marquante, et les commerciaux ou managers qui cherchent des références concrètes pour un pitch client. Cadre : on met en vitrine des réalisations anonymisées ou déjà publiques (hackathons, conférences, formations), jamais un livrable client brut.",
       ressources: "De quoi remplir la vitrine et calibrer la génération de contenu : les <a href=\"https://wefiitcom.sharepoint.com/:f:/s/TribeExpertises/IgDNK407IgLFQ5VRD1j-Y9J9AaPeWynZBsYXG8LcUeblIvE?e=6f7O02\" target=\"_blank\" rel=\"noopener\">formations réalisées chez les clients</a>, les <a href=\"https://wefiitcom.sharepoint.com/:f:/s/TribeExpertises/IgCoAzuvU8p3TpV_iOEC4DSrAa2rJFVJ1K1dgRbNkAUgiNw?e=l2B6xI\" target=\"_blank\" rel=\"noopener\">conférences, séminaires et REX inspirationnels</a>, et les <a href=\"https://wefiitcom.sharepoint.com/sites/INTERNALCOMMUNICATION/Documents%20partages/Contr%C3%B4le%20QA%20Notori%C3%A9t%C3%A9/Guidelines%20Blog%20WeFiiT.pdf\" target=\"_blank\" rel=\"noopener\">Guidelines Blog WeFiiT</a> pour écrire au bon ton.",
@@ -45,9 +45,9 @@ const DEFIS = [
   {
     emoji: "🎤",
     titre: "Coach Soutenances",
-    constat: "La préparation soutenance, c'est l'un des rituels les plus sacrés et les plus appréciés chez WeFiiT.",
+    constat: "La préparation soutenance avec les PADs, c'est l'un des rituels les plus sacrés et les plus appréciés chez WeFiiT.",
     probleme: "Comment s'entraîner sans complexes avant sa prépa soutenance avec un PAD ?",
-    build: "Un coach IA vocal qui débriefe le fond et la forme du pitch, avant sa préparation soutenance.",
+    build: "Un coach IA, boosté par les capacités d'analyse vocale des LLM, qui débriefe le fond et la forme du pitch avant la prépa soutenance.",
     fiche: Object.assign({}, FICHE_VIDE, {
       utilisateurs: "Les WeFiiTers qui préparent leur soutenance client — le pitch où le consultant se présente au client avant d'être staffé — seuls et à leur rythme, pour répéter et gagner en assurance avant la prépa avec le PAD.",
       ressources: "La Mallette du Consultant contient déjà tout le référentiel du coach : le <a href=\"https://wefiitcom.sharepoint.com/sites/WeFiiT/Documents%20partages/Forms/AllItems.aspx?id=%2Fsites%2FWeFiiT%2FDocuments%20partages%2FG%C3%A9n%C3%A9ral%2F4%20%2D%20La%20Mallette%20du%20Consultant%2F3%20%2D%20Mes%20soutenances%20clients%2F%5BGUIDE%5D%20Prepa%20soutenance%2Epdf&parent=%2Fsites%2FWeFiiT%2FDocuments%20partages%2FG%C3%A9n%C3%A9ral%2F4%20%2D%20La%20Mallette%20du%20Consultant%2F3%20%2D%20Mes%20soutenances%20clients&p=true&ga=1\" target=\"_blank\" rel=\"noopener\">Guide Prépa Soutenance</a>, les <a href=\"https://wefiitcom.sharepoint.com/sites/WeFiiT/Documents%20partages/Forms/AllItems.aspx?id=%2Fsites%2FWeFiiT%2FDocuments%20partages%2FG%C3%A9n%C3%A9ral%2F4%20%2D%20La%20Mallette%20du%20Consultant%2F3%20%2D%20Mes%20soutenances%20clients%2FQuestionsTypeSoutenance%2Epdf&parent=%2Fsites%2FWeFiiT%2FDocuments%20partages%2FG%C3%A9n%C3%A9ral%2F4%20%2D%20La%20Mallette%20du%20Consultant%2F3%20%2D%20Mes%20soutenances%20clients&p=true&ga=1\" target=\"_blank\" rel=\"noopener\">Questions Types Soutenance</a> et le <a href=\"https://wefiitcom.sharepoint.com/:p:/s/WeFiiT/EVNaprni0o1Khkpw1qK2mF4BSq69BPxNBjrDm9HNEoil_g?e=GzZcF3\" target=\"_blank\" rel=\"noopener\">Guide Construire son Analyse Produit</a>.",
@@ -58,8 +58,8 @@ const DEFIS = [
   {
     emoji: "🧰",
     titre: "Toolkit Agentique",
-    constat: "En mission, chaque WeFiiTer brille déjà avec ses propres agents IA : Discovery, Test Utilisateur, User Stories, Tests Automatisés… Mais chacun dans son coin, sans mise en commun ni émulation collective.",
-    probleme: "Comment équiper chaque WeFiiTer d'agents IA éprouvés sur le terrain, et harmoniser nos pratiques ?",
+    constat: "Chez WeFiiT, on a déjà le Toolkit du Consultant : le livrable qui centralise nos outils et nos méthodes de référence pour délivrer notre expertise product. L'enjeu : construire celui du consultant PM & QA augmenté.",
+    probleme: "Comment mutualiser et harmoniser les nombreux agents déjà créés par des WeFiiTers au sein d'une signature WeFiiT unique ?",
     build: "Des agents signature WeFiiT, reconnaissables, alignés sur nos standards de qualité Product Management.",
     fiche: Object.assign({}, FICHE_VIDE, {
       utilisateurs: "Tous les consultants WeFiiT, au quotidien sur leurs missions, qui veulent des agents fiables et partagés plutôt que de bricoler les leurs dans leur coin. Le livrable attendu : les agents eux-mêmes, éprouvés et documentés — pas une plateforme.",
@@ -71,8 +71,8 @@ const DEFIS = [
   {
     emoji: "☕",
     titre: "We.Café",
-    constat: "WeFiiT grandit sans grossir : 120 WeFiiTers aujourd'hui, avec plein d'occasions de rencontrer de nouvelles personnes qu'on ne saisit pas encore.",
-    probleme: "Comment provoquer, chaque semaine, une rencontre qu'on n'aurait jamais eue autrement ?",
+    constat: "Chez WeFiiT, on se rencontre déjà dans nos cercles : les missions, les Tribes, la vie d'entreprise. Mais à 120 WeFiiTers, ça fait 119 rencontres possibles par personne.",
+    probleme: "Comment provoquer, chaque semaine, de nouvelles rencontres entre WeFiiTers ?",
     build: "Une app qui matche deux WeFiiTers qu'on n'aurait jamais croisés autrement, une autre Tribe, un autre client, un autre étage, pour partager un café.",
     fiche: Object.assign({}, FICHE_VIDE, {
       utilisateurs: "Tous les WeFiiTers, et particulièrement les nouveaux arrivants, qui veulent rencontrer des collègues et créer du lien au-delà des projets.",
@@ -121,7 +121,7 @@ const RAISONS = [
 const TOOLBOX = [
   { emoji: "🔑", titre: "Un compte Claude par équipe", texte: "Chaque capitaine d'équipe a un accès SSO à un compte Claude. Et chaque équipe aura son propre écran pour vibe coder ensemble." },
   { emoji: "🎨", titre: "Le Design System WeFiiT", texte: "Couleurs, typos, composants : votre app aura les couleurs de WeFiiT dès la première itération." },
-  { emoji: "📦", titre: "Des inputs et des connecteurs sur étagère", texte: "Des accélérateurs pour chaque projet et des connecteurs SharePoint et Notion, déjà branchés dans Claude." }
+  { emoji: "📦", titre: "Des inputs et des connecteurs sur étagère", texte: "Des accélérateurs pour chaque projet et un connecteur SharePoint, déjà branché dans Claude." }
 ];
 
 const OUTILS = [
