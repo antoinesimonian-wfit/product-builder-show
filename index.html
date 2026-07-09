@@ -204,21 +204,21 @@
     position: relative; border-radius: 26px; overflow: hidden;
     background: linear-gradient(165deg, #0e2a7a 0%, #071d5c 70%);
     border: 1px solid rgba(255,255,255,0.12);
-    min-height: min(70vh, 680px); display: grid;
+    min-height: min(62vh, 600px); display: grid;
   }
   .diapo {
-    grid-area: 1 / 1; padding: clamp(48px, 5vw, 64px) clamp(96px, 9vw, 130px) clamp(72px, 8vw, 96px);
+    grid-area: 1 / 1; padding: clamp(40px, 4.5vw, 52px) clamp(52px, 6vw, 84px) clamp(56px, 6vw, 72px);
     display: flex; flex-direction: column; justify-content: flex-start;
     opacity: 0; transform: scale(0.985); transition: opacity .5s ease, transform .5s ease;
     pointer-events: none;
   }
   .diapo.active { opacity: 1; transform: scale(1); pointer-events: auto; }
-  .diapo .haut { display: flex; align-items: center; gap: 20px; margin-bottom: 40px; flex-wrap: wrap; }
+  .diapo .haut { display: flex; align-items: center; gap: 20px; margin-bottom: 28px; flex-wrap: wrap; }
   .diapo .num { font-family: 'Publica Play', sans-serif; font-size: clamp(0.95rem, 1.5vw, 1.15rem); color: var(--orange); letter-spacing: 0.06em; }
   .diapo h3 { font-family: 'Publica Play', sans-serif; font-weight: 400; font-size: clamp(2.4rem, 4.6vw, 3.4rem); line-height: 1.04; letter-spacing: -0.02em; }
   .diapo .emoji { font-size: clamp(2.4rem, 4.6vw, 3.4rem); }
   /* Sous-titre de constat, sous le titre du défi */
-  .diapo .constat { font-size: clamp(1.05rem, 1.6vw, 1.25rem); font-weight: 400; line-height: 1.55; color: #9aa8d8; margin-bottom: 34px; max-width: 46em; }
+  .diapo .constat { font-size: clamp(1.05rem, 1.6vw, 1.25rem); font-weight: 400; line-height: 1.55; color: #9aa8d8; margin-bottom: 28px; max-width: 46em; }
 
   /* Bloc Problème → On build : deux colonnes, la flèche colle au texte du problème */
   .diapo .colonnes { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 4vw, 48px); align-items: start; }
@@ -236,7 +236,7 @@
 
   /* CTA vers la fiche complète du défi : pilule en dégradé orange */
   .fiche-lien {
-    align-self: flex-start; margin-top: 34px; cursor: pointer;
+    align-self: flex-start; margin-top: 28px; cursor: pointer;
     font-family: 'Geomanist', sans-serif; font-size: 15px; font-weight: 500; color: #fff;
     display: inline-flex; align-items: center; gap: 10px;
     background: var(--cta); border: none; border-radius: 999px; padding: 13px 28px;
